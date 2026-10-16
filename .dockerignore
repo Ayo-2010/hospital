@@ -1,0 +1,13 @@
+node_modules
+.nuxt
+.nitro
+dist
+.env
+.env.local
+*.log
+.git
+.gitignore
+README.md
+main.md
+main2.md
+main3.md

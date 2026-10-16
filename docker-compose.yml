@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: hospital
+      POSTGRES_PASSWORD: hospital123
+      POSTGRES_DB: hospital
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hospital -d hospital"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgresql://hospital:hospital123@postgres:5432/hospital
+      AUTH_SECRET: dev-secret-change-in-production
+      NUXT_IGNORE_LOCK: "1"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./prisma:/app/prisma
+    command: sh -c "pnpm db:push && pnpm db:seed && pnpm dev -- --host 0.0.0.0 --port 3000"
+
+volumes:
+  postgres_data:

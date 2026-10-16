@@ -1,0 +1,9 @@
+node_modules
+dist
+.nuxt
+.nitro
+.env
+.env.local
+*.log
+.output
+.kombai

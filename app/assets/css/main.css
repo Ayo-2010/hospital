@@ -1,0 +1,301 @@
+@import "tailwindcss";
+
+@theme {
+  --color-medical-50: #f0f9ff;
+  --color-medical-100: #e0f2fe;
+  --color-medical-200: #bae6fd;
+  --color-medical-300: #7dd3fc;
+  --color-medical-400: #38bdf8;
+  --color-medical-500: #0ea5e9;
+  --color-medical-600: #0284c7;
+  --color-medical-700: #0369a1;
+  --color-medical-800: #075985;
+  --color-medical-900: #0c4a6e;
+  --color-medical-950: #082f49;
+
+  --color-healing-50: #f0fdf4;
+  --color-healing-100: #dcfce7;
+  --color-healing-200: #bbf7d0;
+  --color-healing-300: #86efac;
+  --color-healing-400: #4ade80;
+  --color-healing-500: #22c55e;
+  --color-healing-600: #16a34a;
+  --color-healing-700: #15803d;
+  --color-healing-800: #166534;
+  --color-healing-900: #14532d;
+
+  --color-emergency-50: #fef2f2;
+  --color-emergency-100: #fee2e2;
+  --color-emergency-200: #fecaca;
+  --color-emergency-300: #fca5a5;
+  --color-emergency-400: #f87171;
+  --color-emergency-500: #ef4444;
+  --color-emergency-600: #dc2626;
+  --color-emergency-700: #b91c1c;
+  --color-emergency-800: #991b1b;
+  --color-emergency-900: #7f1d1d;
+
+  --color-warm-50: #fffbeb;
+  --color-warm-100: #fef3c7;
+  --color-warm-200: #fde68a;
+  --color-warm-300: #fcd34d;
+  --color-warm-400: #fbbf24;
+  --color-warm-500: #f59e0b;
+  --color-warm-600: #d97706;
+  --color-warm-700: #b45309;
+  --color-warm-800: #92400e;
+  --color-warm-900: #78350f;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-soft: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 4px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 30px -5px rgba(0, 0, 0, 0.04);
+  --shadow-elevated: 0 10px 40px -10px rgba(0, 0, 0, 0.1), 0 20px 50px -15px rgba(0, 0, 0, 0.08);
+  --shadow-glow: 0 0 40px -10px rgba(14, 165, 233, 0.4);
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-slate-900 antialiased font-sans;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    @apply bg-medical-200 text-medical-900;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-medical-500 ring-offset-2;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold tracking-tight text-slate-900 dark:text-white;
+  }
+
+  h1 { @apply text-4xl sm:text-5xl lg:text-6xl; }
+  h2 { @apply text-3xl sm:text-4xl; }
+  h3 { @apply text-2xl sm:text-3xl; }
+  h4 { @apply text-xl sm:text-2xl; }
+  h5 { @apply text-lg sm:text-xl; }
+  h6 { @apply text-base sm:text-lg; }
+}
+
+@layer components {
+  .container-main {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .section-sm {
+    @apply py-10 sm:py-12 lg:py-16;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-medium text-white transition-all duration-200;
+    @apply bg-medical-600 hover:bg-medical-700 active:bg-medical-800;
+    @apply shadow-soft hover:shadow-card focus:ring-2 focus:ring-medical-500 focus:ring-offset-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-medium transition-all duration-200;
+    @apply bg-white text-slate-700 border border-slate-300 hover:bg-slate-50 hover:border-slate-400;
+    @apply dark:bg-slate-800 dark:text-slate-200 dark:border-slate-600 dark:hover:bg-slate-700 dark:hover:border-slate-500;
+    @apply shadow-soft hover:shadow-card focus:ring-2 focus:ring-slate-400 focus:ring-offset-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-emergency {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-medium text-white transition-all duration-200;
+    @apply bg-emergency-600 hover:bg-emergency-700 active:bg-emergency-800;
+    @apply shadow-soft hover:shadow-card focus:ring-2 focus:ring-emergency-500 focus:ring-offset-2;
+    animation: pulseSubtle 2s ease-in-out infinite;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-all duration-200;
+    @apply text-slate-600 hover:text-medical-600 hover:bg-medical-50 dark:text-slate-300 dark:hover:text-medical-400 dark:hover:bg-medical-900/30;
+  }
+
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-300;
+    @apply dark:border-slate-700 dark:bg-slate-800/50;
+    @apply shadow-soft hover:shadow-card;
+  }
+
+  .card-hover {
+    @apply rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-300;
+    @apply dark:border-slate-700 dark:bg-slate-800/50;
+    @apply shadow-soft hover:shadow-elevated hover:-translate-y-1;
+  }
+
+  .card-interactive {
+    @apply rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-300;
+    @apply dark:border-slate-700 dark:bg-slate-800/50;
+    @apply shadow-soft hover:shadow-elevated hover:-translate-y-1 cursor-pointer;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium;
+  }
+
+  .badge-medical {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium bg-medical-100 text-medical-700 dark:bg-medical-900/40 dark:text-medical-300;
+  }
+
+  .badge-healing {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium bg-healing-100 text-healing-700 dark:bg-healing-900/40 dark:text-healing-300;
+  }
+
+  .badge-emergency {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium bg-emergency-100 text-emergency-700 dark:bg-emergency-900/40 dark:text-emergency-300;
+  }
+
+  .badge-warm {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium bg-warm-100 text-warm-700 dark:bg-warm-900/40 dark:text-warm-300;
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400;
+    @apply dark:border-slate-600 dark:bg-slate-800 dark:text-white dark:placeholder:text-slate-500;
+    @apply transition-all duration-200;
+    @apply focus:border-medical-500 focus:ring-2 focus:ring-medical-500/20 focus:outline-none;
+    @apply disabled:cursor-not-allowed disabled:opacity-50 disabled:bg-slate-100 dark:disabled:bg-slate-900/50;
+  }
+
+  .textarea-field {
+    @apply w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 dark:border-slate-600 dark:bg-slate-800 dark:text-white dark:placeholder:text-slate-500 transition-all duration-200 focus:border-medical-500 focus:ring-2 focus:ring-medical-500/20 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 disabled:bg-slate-100 dark:disabled:bg-slate-900/50 resize-y min-h-[120px];
+  }
+
+  .label-field {
+    @apply block mb-2 text-sm font-medium text-slate-700 dark:text-slate-300;
+  }
+
+  .hero-gradient {
+    @apply relative overflow-hidden;
+    background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 50%, #f0fdf4 100%);
+  }
+
+  .hero-gradient::before {
+    content: "";
+    @apply absolute inset-0 opacity-50;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230ea5e9' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .stats-counter {
+    @apply font-display font-bold tabular-nums;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-medical-600 via-medical-500 to-healing-600 bg-clip-text text-transparent;
+  }
+
+  .divider {
+    @apply relative w-full h-px bg-slate-200 dark:bg-slate-700;
+  }
+
+  .divider::before {
+    content: "";
+    @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-px bg-gradient-to-r from-transparent via-medical-400 to-transparent;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-slide-down {
+    animation: slideDown 0.4s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  .animate-pulse-subtle {
+    animation: pulseSubtle 2s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes pulseSubtle {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(220, 38, 38, 0); }
+  }
+
+  .stagger-1 { animation-delay: 100ms; }
+  .stagger-2 { animation-delay: 200ms; }
+  .stagger-3 { animation-delay: 300ms; }
+  .stagger-4 { animation-delay: 400ms; }
+  .stagger-5 { animation-delay: 500ms; }
+  .stagger-6 { animation-delay: 600ms; }
+
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 dark:bg-slate-900/70 dark:border-slate-800/50;
+  }
+
+  .gradient-border {
+    @apply relative rounded-2xl;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, #0ea5e9, #22c55e) border-box;
+    border: 1px solid transparent;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer utilities {
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  }
+}
