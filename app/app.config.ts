@@ -1,8 +1,9 @@
 export default defineAppConfig({
   ui: {
     colors: {
-      primary: 'green',
-      neutral: 'slate'
-    }
-  }
+      // Keep Nuxt UI components aligned with the MedCore medical-blue brand.
+      primary: 'sky',
+      neutral: 'slate',
+    },
+  },
 })

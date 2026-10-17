@@ -9,10 +9,10 @@
 
 <script setup lang="ts">
 definePageMeta({ layout: 'public' })
-import CareersHero from './components/CareersHero.vue'
-import CareersBenefits from './components/CareersBenefits.vue'
-import CareersJobs from './components/CareersJobs.vue'
-import CTASection from './components/CTASection.vue'
+import CareersHero from '~/components/site/CareersHero.vue'
+import CareersBenefits from '~/components/site/CareersBenefits.vue'
+import CareersJobs from '~/components/site/CareersJobs.vue'
+import CTASection from '~/components/site/CTASection.vue'
 
-useHead({ title: 'Careers - MedCore HMS' })
+useHead({ title: 'Careers | MedCore Hospital' })
 </script>

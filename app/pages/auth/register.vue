@@ -1,49 +1,56 @@
 <template>
   <div class="flex min-h-screen">
-    <div class="hidden lg:flex lg:w-1/2 lg:flex-col lg:items-center lg:justify-center bg-gradient-to-br from-medical-700 via-medical-800 to-medical-900 p-12 text-white">
+    <aside
+      class="hidden bg-medical-900 p-12 text-white lg:flex lg:w-1/2 lg:flex-col lg:items-center lg:justify-center"
+    >
       <div class="max-w-md text-center">
-        <div class="mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-sm mx-auto">
-          <Icon name="i-lucide-user-plus" class="h-10 w-10" />
-        </div>
-        <h2 class="font-display text-3xl font-bold">Create Your Patient Account</h2>
-        <p class="mt-4 text-medical-100">Register for secure access to your patient portal. Manage appointments, view records, and communicate with your care team.</p>
-        <div class="mt-8 grid grid-cols-3 gap-4 text-center">
+        <span class="mx-auto flex h-20 w-20 items-center justify-center rounded-xl bg-white/10">
+          <Icon name="i-lucide-user-plus" class="h-10 w-10" aria-hidden="true" />
+        </span>
+        <p class="mt-6 font-display text-3xl font-semibold tracking-tight">
+          Create your patient account
+        </p>
+        <p class="mt-4 text-medical-100">
+          Register for secure access to your patient portal. Manage appointments, view records, and
+          communicate with your care team.
+        </p>
+        <dl class="mt-8 grid grid-cols-3 gap-4 text-center">
           <div>
-            <p class="text-2xl font-bold">Secure</p>
-            <p class="text-xs text-medical-200">Protected</p>
+            <dt class="text-xs text-medical-200">Secure</dt>
+            <dd class="mt-1 font-display text-2xl font-semibold">Protected</dd>
           </div>
           <div>
-            <p class="text-2xl font-bold">Fast</p>
-            <p class="text-xs text-medical-200">Setup</p>
+            <dt class="text-xs text-medical-200">Fast</dt>
+            <dd class="mt-1 font-display text-2xl font-semibold">Setup</dd>
           </div>
           <div>
-            <p class="text-2xl font-bold">Free</p>
-            <p class="text-xs text-medical-200">Registration</p>
+            <dt class="text-xs text-medical-200">Free</dt>
+            <dd class="mt-1 font-display text-2xl font-semibold">Registration</dd>
           </div>
-        </div>
+        </dl>
       </div>
-    </div>
+    </aside>
 
-    <div class="flex flex-1 items-center justify-center bg-slate-50 px-4 dark:bg-slate-950">
+    <div class="flex flex-1 items-center justify-center bg-slate-50 px-4 py-12">
       <div class="w-full max-w-lg">
         <div class="mb-8 text-center lg:hidden">
           <NuxtLink to="/" class="inline-flex items-center gap-3 text-medical-900">
             <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-medical-700 text-white">
               <Icon name="i-lucide-heart-pulse" class="h-5 w-5" aria-hidden="true" />
             </span>
-            <span class="font-display text-xl font-bold">MedCore Hospital</span>
+            <span class="font-display text-lg font-semibold">MedCore Hospital</span>
           </NuxtLink>
         </div>
 
-        <div class="rounded-xl border border-slate-200 bg-white p-8 shadow-sm">
-          <h1 class="font-display text-3xl font-semibold text-slate-950">
+        <div class="rounded-xl border border-slate-200 bg-white p-8 shadow-soft">
+          <h1 class="font-display text-3xl font-semibold tracking-tight text-slate-950">
             Create your patient account
           </h1>
           <p class="mt-2 text-sm text-slate-600">
             Register for secure access to your patient portal and appointment booking.
           </p>
 
-          <form @submit.prevent="handleRegister" class="mt-6 space-y-5">
+          <form class="mt-6 space-y-5" @submit.prevent="handleRegister">
             <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
               <div>
                 <label for="firstName" class="label-field">First name</label>
@@ -135,39 +142,30 @@
               />
               <label for="terms-agree" class="text-sm text-slate-600">
                 I agree to the
-                <NuxtLink to="/terms" class="font-semibold text-medical-800 underline underline-offset-2">Terms & Conditions</NuxtLink>
+                <NuxtLink to="/terms" class="link">Terms &amp; Conditions</NuxtLink>
                 and
-                <NuxtLink to="/privacy" class="font-semibold text-medical-800 underline underline-offset-2">Privacy Policy</NuxtLink>
+                <NuxtLink to="/privacy" class="link">Privacy Policy</NuxtLink>
               </label>
             </div>
 
-            <UButton type="submit" block color="medical" :loading="loading">
+            <UButton type="submit" block color="primary" :loading="loading">
               Create account
             </UButton>
+
+            <p class="text-center text-sm text-slate-600">
+              Already have an account?
+              <NuxtLink to="/auth/login" class="link">Sign in</NuxtLink>
+            </p>
+
+            <p class="text-center text-xs text-slate-500">
+              By registering, you agree to receive communications from MedCore Hospital.
+            </p>
           </form>
-
-          <div class="relative my-5">
-            <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-slate-200"></div></div>
-            <span class="relative inline-block px-3 text-xs uppercase text-slate-500">or</span>
-          </div>
-
-          <p class="text-center text-sm text-slate-600">
-            Already have an account?
-            <NuxtLink to="/auth/login" class="font-semibold text-medical-800 hover:underline">
-              Sign in
-            </NuxtLink>
-          </p>
-
-          <p class="mt-4 text-center text-xs text-slate-500">
-            By registering, you agree to receive communications from MedCore Hospital.
-          </p>
         </div>
 
-        <div class="mt-6 text-center">
-          <p class="text-xs text-slate-500">
-            For a medical emergency, call <a class="font-semibold text-emergency-700" href="tel:911">911</a>
-          </p>
-        </div>
+        <p class="mt-6 text-center text-xs text-slate-500">
+          For a medical emergency, call <a class="font-semibold text-emergency-700" href="tel:112">112</a>
+        </p>
       </div>
     </div>
   </div>

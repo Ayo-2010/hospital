@@ -44,8 +44,8 @@ const isDark = computed(() => props.direction !== 'clinician-first')
 
       <address class="not-italic text-sm leading-6">
         <h2 class="text-sm font-semibold" :class="isDark ? 'text-white' : 'text-slate-900'">Contact</h2>
-        <p class="mt-3">123 Medical Center Drive<br>Healthcare District, HC 12345</p>
-        <a class="underline underline-offset-4" :class="isDark ? 'text-white' : 'text-medical-800'" href="tel:+11234567890">+1 (123) 456-7890</a>
+        <p class="mt-3">12 Adeola Odeku Street<br>Victoria Island, Lagos 101241</p>
+        <a class="underline underline-offset-4" :class="isDark ? 'text-white' : 'text-medical-800'" href="tel:+2347045033528">0704 503 3528</a>
         <p class="mt-2 text-xs" :class="isDark ? 'text-slate-400' : 'text-slate-500'">Demonstration contact details.</p>
       </address>
     </div>
@@ -53,7 +53,7 @@ const isDark = computed(() => props.direction !== 'clinician-first')
     <div :class="isDark ? 'border-t border-slate-800' : 'border-t border-slate-200'">
       <div class="container-main flex flex-col gap-2 py-4 text-xs sm:flex-row sm:items-center sm:justify-between" :class="isDark ? 'text-slate-400' : 'text-slate-500'">
         <span>© {{ new Date().getFullYear() }} MedCore Hospital · Demonstration website</span>
-        <span>For an immediate emergency in the U.S., call <a class="font-semibold text-emergency-700 underline" href="tel:911">911</a>.</span>
+        <span>For an immediate emergency, call <a class="font-semibold text-emergency-700 underline" href="tel:112">112</a>.</span>
       </div>
     </div>
   </footer>

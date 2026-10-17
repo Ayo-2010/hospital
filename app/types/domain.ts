@@ -1,3 +1,17 @@
+import type {
+  AppointmentStatus,
+  AppointmentType,
+  Gender,
+  InvoiceStatus,
+  PatientStatus,
+  PrescriptionStatus,
+  ResultFlag,
+  Role,
+  SurgeryPriority,
+  SurgeryStatus,
+  UserStatus,
+} from './index'
+
 export interface EmergencyContact {
   id: string
   name: string

@@ -1,5 +1,5 @@
 <template>
-  <main class="min-h-[70vh] bg-slate-50">
+  <div class="min-h-[70vh] bg-slate-50">
     <div class="container-main py-7 sm:py-10">
       <nav aria-label="Breadcrumb" class="mb-5 text-sm text-slate-500">
         <NuxtLink to="/" class="hover:text-medical-800">Home</NuxtLink>
@@ -58,7 +58,7 @@
           <div class="flex items-start gap-3 rounded-md border border-emergency-200 bg-emergency-50 px-4 py-3.5">
             <Icon name="i-lucide-circle-alert" class="mt-0.5 h-5 w-5 text-emergency-700" />
             <p class="text-sm leading-5 text-emergency-900">
-              <strong class="font-semibold">Medical emergency?</strong> Call 911 or visit the ER.
+              <strong class="font-semibold">Medical emergency?</strong> Call 112 or visit the ER.
             </p>
           </div>
           <div class="rounded-lg border border-slate-200 bg-white p-5">
@@ -78,7 +78,7 @@
           <figcaption class="mt-1.5 text-xs text-slate-500">Team collaboration — photo by Christina M on Pexels.</figcaption>
         </figure>
         <figure class="m-0">
-          <img class="aspect-video w-full rounded-lg border border-slate-200 bg-slate-100 object-cover object-center" src="https://images.pexels.com/photos/5325833/pexels-photo-535833.jpg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Doctor examining a patient" width="400" height="250" loading="lazy" decoding="async" />
+          <img class="aspect-video w-full rounded-lg border border-slate-200 bg-slate-100 object-cover object-center" src="https://images.pexels.com/photos/5325833/pexels-photo-5325833.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Doctor examining a patient" width="400" height="250" loading="lazy" decoding="async" />
           <figcaption class="mt-1.5 text-xs text-slate-500">Physician consultation — photo by Karolina Grabowska on Pexels.</figcaption>
         </figure>
         <figure class="m-0">
@@ -87,7 +87,7 @@
         </figure>
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script setup lang="ts">

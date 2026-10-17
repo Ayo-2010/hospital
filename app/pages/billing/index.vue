@@ -19,8 +19,8 @@
       </div>
       <div class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
         <div class="flex items-center gap-4">
-          <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-heal-100 text-heal-700">
-            <Icon name="i-lucide-check-circle" class="h-6 w-6" />
+          <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-healing-100 text-healing-700">
+            <Icon name="i-lucide-circle-check" class="h-6 w-6" />
           </div>
           <div>
             <p class="text-sm text-slate-600">Payments Received</p>
@@ -42,7 +42,7 @@
       <div class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
         <div class="flex items-center gap-4">
           <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-emergency-100 text-emergency-700">
-            <Icon name="i-lucide-alert-circle" class="h-6 w-6" />
+            <Icon name="i-lucide-circle-alert" class="h-6 w-6" />
           </div>
           <div>
             <p class="text-sm text-slate-600">Overdue</p>

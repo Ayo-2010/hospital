@@ -11,7 +11,7 @@ const startActions = [
   { title: 'Find a doctor', detail: 'Search by name, specialty, location, or language.', to: `${base}/doctors`, tone: 'medical' },
   { title: 'Browse departments and services', detail: 'See care areas and what each department covers.', to: '/departments', tone: 'medical' },
   { title: 'Book an appointment', detail: 'Choose a clinician and request a visit time.', to: `${base}/appointments/book`, tone: 'medical' },
-  { title: 'Emergency information', detail: 'For a life-threatening emergency in the U.S., call 911.', to: '/emergency', tone: 'emergency' },
+  { title: 'Emergency information', detail: 'For a life-threatening emergency, call 112.', to: '/emergency', tone: 'emergency' },
 ]
 const steps = [
   { title: 'Choose a department', detail: 'Browse the care areas above and open one to learn what it covers.' },
@@ -78,7 +78,7 @@ const serviceLinks = [
         </div>
       </div>
       <div class="mt-8 flex flex-col gap-3 border border-emergency-200 bg-emergency-50 px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
-        <div><h3 class="font-semibold text-emergency-900">Emergency Medicine</h3><p class="mt-1 text-sm leading-5 text-emergency-900/80">For a life-threatening emergency in the U.S., call 911. For department information, visit Emergency Services.</p></div>
+        <div><h3 class="font-semibold text-emergency-900">Emergency Medicine</h3><p class="mt-1 text-sm leading-5 text-emergency-900/80">For a life-threatening emergency, call 112. For department information, visit Emergency Services.</p></div>
         <NuxtLink to="/emergency" class="shrink-0 text-sm font-semibold text-emergency-800 underline underline-offset-4">Emergency information <Icon name="i-lucide-arrow-right" class="ml-1 inline h-4 w-4" aria-hidden="true" /></NuxtLink>
       </div>
     </section>
@@ -103,8 +103,8 @@ const serviceLinks = [
     </section>
 
     <section class="container-main grid gap-8 py-10 sm:grid-cols-[1.15fr_.85fr] sm:items-center" aria-labelledby="department-contact-title">
-      <div><h2 id="department-contact-title" class="font-display text-2xl font-semibold text-slate-900">Need help finding the right place?</h2><p class="mt-3 text-sm leading-6 text-slate-700">Our contact team can help with general hospital questions and directions. For urgent, life-threatening emergencies in the U.S., call 911.</p></div>
-      <address class="not-italic text-sm leading-6 text-slate-600 sm:border-l-2 sm:border-medical-200 sm:pl-6"><strong class="block text-slate-900">Contact MedCore</strong><a class="mt-2 inline-block underline underline-offset-4" href="tel:+11234567890">+1 (123) 456-7890</a><a class="mt-1 block underline underline-offset-4" href="mailto:info@medcorehms.com">info@medcorehms.com</a><p class="mt-1">123 Medical Center Drive, Healthcare District</p><p class="mt-1 text-xs text-slate-500">Sample contact details for this demonstration site.</p></address>
+      <div><h2 id="department-contact-title" class="font-display text-2xl font-semibold text-slate-900">Need help finding the right place?</h2><p class="mt-3 text-sm leading-6 text-slate-700">Our contact team can help with general hospital questions and directions. For urgent, life-threatening emergencies, call 112.</p></div>
+      <address class="not-italic text-sm leading-6 text-slate-600 sm:border-l-2 sm:border-medical-200 sm:pl-6"><strong class="block text-slate-900">Contact MedCore</strong><a class="mt-2 inline-block underline underline-offset-4" href="tel:+2347045033528">0704 503 3528</a><a class="mt-1 block underline underline-offset-4" href="mailto:info@medcorehospital.com">info@medcorehospital.com</a><p class="mt-1">12 Adeola Odeku Street, Victoria Island</p><p class="mt-1 text-xs text-slate-500">Sample contact details for this demonstration site.</p></address>
     </section>
   </main>
 </template>

@@ -8,9 +8,9 @@
 
 <script setup lang="ts">
 definePageMeta({ layout: 'public' })
-import ContactHero from './components/ContactHero.vue'
-import ContactContent from './components/ContactContent.vue'
-import CTASection from './components/CTASection.vue'
+import ContactHero from '~/components/site/ContactHero.vue'
+import ContactContent from '~/components/site/ContactContent.vue'
+import CTASection from '~/components/site/CTASection.vue'
 
-useHead({ title: 'Contact Us - MedCore HMS' })
+useHead({ title: 'Contact Us | MedCore Hospital' })
 </script>

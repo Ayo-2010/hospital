@@ -173,9 +173,9 @@ function onPreviewSubmit() {
         <PreviewAppointmentRequestSummary :draft="draft" :direction="direction" :doctor-name="selectedClinician?.name" :specialty="selectedClinician?.specialty" :location="selectedClinician?.location" :visit-label="visitLabel" :time-label="timeLabel" :date-label="request.formatPreferredDate()" :missing-visit="missingVisit" :missing-time="missingTime" :missing-contact="missingContact" :is-complete="requestComplete" @navigate="navigate" @preview-submit="onPreviewSubmit" />
         <p v-if="isClinician" class="mt-4 text-xs leading-5 text-slate-500">Fictional demo clinician details. Sign-in and submission are not connected in this preview.</p>
         <p v-if="notice" role="status" class="mt-3 rounded-md border border-medical-200 bg-medical-50 p-3 text-sm text-medical-900">{{ notice }}</p>
-        <div v-if="isCare" class="mt-5 border-l-2 border-emergency-500 py-1 pl-4"><h2 class="text-sm font-semibold text-slate-900">Need urgent care?</h2><p class="mt-1 text-sm leading-5 text-slate-600">For a medical emergency in the U.S., call 911.</p><a class="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-emergency-800 underline underline-offset-4" href="tel:911"><Icon name="i-lucide-phone" class="h-4 w-4" aria-hidden="true" />Call 911</a></div>
+        <div v-if="isCare" class="mt-5 border-l-2 border-emergency-500 py-1 pl-4"><h2 class="text-sm font-semibold text-slate-900">Need urgent care?</h2><p class="mt-1 text-sm leading-5 text-slate-600">For a medical emergency, call 112.</p><a class="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-emergency-800 underline underline-offset-4" href="tel:112"><Icon name="i-lucide-phone" class="h-4 w-4" aria-hidden="true" />Call 112</a></div>
       </div>
     </div>
-    <p v-if="isCare" class="mt-8 border-t border-slate-200 pt-5 text-xs text-slate-500">© {{ new Date().getFullYear() }} MedCore HMS · Example interface with fictional clinician details.</p>
+    <p v-if="isCare" class="mt-8 border-t border-slate-200 pt-5 text-xs text-slate-500">© {{ new Date().getFullYear() }} MedCore Hospital · Example interface with fictional clinician details.</p>
   </main>
 </template>

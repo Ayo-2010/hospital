@@ -11,7 +11,7 @@ export const PHARMACY_NAV = [
 export const LABORATORY_NAV = [
   { label: 'Dashboard', to: '/laboratory', icon: 'i-lucide-flask-conical' },
   { label: 'Orders', to: '/laboratory/orders', icon: 'i-lucide-clipboard-list' },
-  { label: 'Samples', to: '/laboratory/samples', icon: 'i-lucide-vial' },
+  { label: 'Samples', to: '/laboratory/samples', icon: 'i-lucide-test-tube' },
   { label: 'Results', to: '/laboratory/results', icon: 'i-lucide-file-check' },
   { label: 'Tests', to: '/laboratory/tests', icon: 'i-lucide-beaker' },
   { label: 'Reports', to: '/laboratory/reports', icon: 'i-lucide-bar-chart-3' },
@@ -34,7 +34,7 @@ export const NURSE_NAV = [
   { label: 'Vital Signs', to: '/nurse/vitals', icon: 'i-lucide-activity' },
   { label: 'Nursing Notes', to: '/nurse/notes', icon: 'i-lucide-file-text' },
   { label: 'Medications', to: '/nurse/medications', icon: 'i-lucide-pill' },
-  { label: 'Tasks', to: '/nurse/tasks', icon: 'i-lucide-check-square' },
+  { label: 'Tasks', to: '/nurse/tasks', icon: 'i-lucide-square-check' },
   { label: 'Admissions', to: '/nurse/admissions', icon: 'i-lucide-log-in' },
   { label: 'Discharges', to: '/nurse/discharges', icon: 'i-lucide-log-out' },
   { label: 'Notifications', to: '/nurse/notifications', icon: 'i-lucide-bell' },
@@ -68,7 +68,7 @@ export const ADMIN_NAV = [
   { label: 'Roles', to: '/admin/roles', icon: 'i-lucide-shield' },
   { label: 'Permissions', to: '/admin/permissions', icon: 'i-lucide-lock' },
   { label: 'Staff', to: '/admin/staff', icon: 'i-lucide-user-cog' },
-  { label: 'Departments', to: '/admin/departments', icon: 'i-lucide-building-2' },
+  { label: 'Departments', to: '/admin/departments', icon: 'i-lucide-building' },
   { label: 'Audit Logs', to: '/admin/audit-logs', icon: 'i-lucide-file-search' },
   { label: 'Documents', to: '/admin/documents', icon: 'i-lucide-folder' },
   { label: 'Notifications', to: '/admin/notifications', icon: 'i-lucide-bell' },
@@ -78,7 +78,7 @@ export const ADMIN_NAV = [
 
 export const MANAGEMENT_NAV = [
   { label: 'Overview', to: '/management', icon: 'i-lucide-layout-dashboard' },
-  { label: 'Departments', to: '/management/departments', icon: 'i-lucide-building-2' },
+  { label: 'Departments', to: '/management/departments', icon: 'i-lucide-building' },
   { label: 'Staff', to: '/management/staff', icon: 'i-lucide-users' },
   { label: 'Finance', to: '/management/finance', icon: 'i-lucide-dollar-sign' },
   { label: 'Patients', to: '/management/patients', icon: 'i-lucide-user' },
@@ -108,7 +108,7 @@ export const SURGERY_NAV = [
 export const HEAD_OF_SURGERY_NAV = [
   { label: 'Dashboard', to: '/head-of-surgery', icon: 'i-lucide-layout-dashboard' },
   { label: 'Surgical Cases', to: '/head-of-surgery/cases', icon: 'i-lucide-clipboard-list' },
-  { label: 'Approvals', to: '/head-of-surgery/approvals', icon: 'i-lucide-check-circle' },
+  { label: 'Approvals', to: '/head-of-surgery/approvals', icon: 'i-lucide-circle-check' },
   { label: 'Schedule', to: '/head-of-surgery/schedule', icon: 'i-lucide-calendar' },
   { label: 'Operating Rooms', to: '/head-of-surgery/operating-rooms', icon: 'i-lucide-door-open' },
   { label: 'Surgeons', to: '/head-of-surgery/surgeons', icon: 'i-lucide-users' },

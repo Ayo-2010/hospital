@@ -1,196 +1,197 @@
 <template>
-  <TransitionRoot
-    :show="open"
-    appear
-    enter="transition duration-200 ease-out"
-    enter-from="opacity-0"
-    enter-to="opacity-100"
-    leave="transition duration-150 ease-in"
-    leave-from="opacity-100"
-    leave-to="opacity-0"
-  >
-    <div
-      v-show="open"
-      class="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4"
-      @click.self="close"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Search"
+  <Teleport to="body">
+    <Transition
+      enter-active-class="transition duration-150 ease-out"
+      enter-from-class="opacity-0"
+      enter-to-class="opacity-100"
+      leave-active-class="transition duration-100 ease-in"
+      leave-from-class="opacity-100"
+      leave-to-class="opacity-0"
     >
-      <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" />
-      <div class="relative w-full max-w-2xl animate-scale-in">
-        <div class="card shadow-elevated">
-          <div class="relative">
-            <label for="search-input" class="sr-only">Search doctors, conditions, or locations</label>
+      <div
+        v-if="open"
+        class="fixed inset-0 z-50 flex items-start justify-center px-4 pt-[12vh]"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Site search"
+      >
+        <div class="absolute inset-0 bg-slate-950/50 backdrop-blur-sm" @click="close" />
+
+        <div class="relative w-full max-w-xl animate-scale-in rounded-xl border border-slate-200 bg-white shadow-elevated">
+          <div class="relative border-b border-slate-200">
+            <label for="site-search" class="sr-only">Search doctors, departments and services</label>
             <Icon
               name="i-lucide-search"
-              class="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400"
+              class="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
               aria-hidden="true"
             />
             <input
-              id="search-input"
+              id="site-search"
+              ref="inputRef"
               v-model="query"
               type="search"
-              placeholder="Search doctors, conditions, locations..."
-              class="w-full pl-12 pr-12 py-3.5 text-lg bg-transparent placeholder:text-slate-400 focus:outline-none"
-              autoFocus
+              class="w-full rounded-t-xl bg-transparent py-4 pl-12 pr-12 text-base text-slate-900 placeholder:text-slate-400 focus:outline-none"
+              placeholder="Search doctors, departments, services…"
+              autocomplete="off"
               @keydown.esc="close"
-              @keydown.enter="handleSearch"
+              @keydown.enter="goToFirst"
             />
-            <button
-              v-if="query"
-              @click="clearSearch"
-              class="absolute right-4 top-1/2 -translate-y-1/2 p-1 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-              aria-label="Clear search"
+            <kbd
+              class="pointer-events-none absolute right-4 top-1/2 hidden -translate-y-1/2 rounded border border-slate-200 bg-slate-50 px-1.5 py-0.5 text-[10px] font-medium text-slate-500 sm:block"
             >
-              <Icon name="i-lucide-x" class="h-5 w-5" />
-            </button>
+              ESC
+            </kbd>
           </div>
 
-          <div v-if="query.length >= 2" class="border-t border-slate-200 dark:border-slate-700">
-            <div class="max-h-96 overflow-y-auto">
-              <div class="p-3">
-                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">Top Results</p>
-                <div class="space-y-1">
-                  <NuxtLink
-                    v-for="result in filteredResults"
-                    :key="result.id"
-                    :to="result.url"
-                    class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-colors hover:bg-slate-100 dark:hover:bg-slate-800"
-                    @click="close"
-                  >
-                    <div class="flex h-9 w-9 items-center justify-center rounded-lg" :class="result.iconBg">
-                      <Icon :name="result.icon" class="h-5 w-5" :class="result.iconColor" />
-                    </div>
-                    <div class="flex-1 min-w-0">
-                      <p class="font-medium text-slate-900 dark:text-white truncate">{{ result.title }}</p>
-                      <p class="text-xs text-slate-500 truncate">{{ result.subtitle }}</p>
-                    </div>
-                    <Icon name="i-lucide-chevron-right" class="h-4 w-4 text-slate-400" />
-                  </NuxtLink>
-                </div>
-              </div>
-
-              <div class="px-3 pb-3">
+          <div class="max-h-80 overflow-y-auto p-2">
+            <template v-if="query.trim().length >= 2">
+              <template v-if="results.length">
+                <p class="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
+                  Results
+                </p>
                 <NuxtLink
-                  :to="`/search?q=${encodeURIComponent(query)}`"
-                  class="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl text-sm font-medium text-medical-600 bg-medical-50 hover:bg-medical-100 dark:bg-medical-900/30 dark:text-medical-400 dark:hover:bg-medical-900/50 transition-colors"
+                  v-for="result in results"
+                  :key="result.to"
+                  :to="result.to"
+                  class="flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors hover:bg-slate-50"
                   @click="close"
                 >
-                  <Icon name="i-lucide-search" class="h-4 w-4" />
-                  View all results for "{{ query }}"
+                  <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg" :class="result.tone">
+                    <Icon :name="result.icon" class="h-4.5 w-4.5" aria-hidden="true" />
+                  </span>
+                  <span class="min-w-0 flex-1">
+                    <span class="block truncate text-sm font-semibold text-slate-900">{{ result.title }}</span>
+                    <span class="block truncate text-xs text-slate-500">{{ result.subtitle }}</span>
+                  </span>
+                  <Icon name="i-lucide-arrow-up-right" class="h-4 w-4 shrink-0 text-slate-400" aria-hidden="true" />
                 </NuxtLink>
+              </template>
+              <p v-else class="px-3 py-8 text-center text-sm text-slate-500">
+                No matches. Try “cardiology”, “pediatrics” or a doctor’s name.
+              </p>
+            </template>
+
+            <template v-else>
+              <p class="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
+                Popular searches
+              </p>
+              <div class="grid grid-cols-2 gap-1.5 p-1">
+                <button
+                  v-for="quick in quickActions"
+                  :key="quick.label"
+                  type="button"
+                  class="flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-left text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50"
+                  @click="selectQuick(quick)"
+                >
+                  <Icon :name="quick.icon" class="h-4.5 w-4.5 shrink-0" :class="quick.iconClass" aria-hidden="true" />
+                  {{ quick.label }}
+                </button>
               </div>
-            </div>
+            </template>
           </div>
 
-          <div v-else-if="query.length > 0" class="p-6 text-center text-slate-500 text-sm">
-            Type at least 2 characters to search
-          </div>
-
-          <div v-else class="p-6">
-            <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">Quick Actions</p>
-            <div class="grid grid-cols-2 gap-2">
-              <NuxtLink
-                to="/appointments/book"
-                class="flex items-center justify-center gap-2 rounded-xl p-3 text-sm font-medium text-slate-700 bg-slate-50 hover:bg-slate-100 dark:text-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-colors"
-                @click="close"
-              >
-                <Icon name="i-lucide-calendar-plus" class="h-5 w-5 text-medical-600" />
-                Book Appointment
-              </NuxtLink>
-              <NuxtLink
-                to="/doctors"
-                class="flex items-center justify-center gap-2 rounded-xl p-3 text-sm font-medium text-slate-700 bg-slate-50 hover:bg-slate-100 dark:text-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-colors"
-                @click="close"
-              >
-                <Icon name="i-lucide-user-round-search" class="h-5 w-5 text-medical-600" />
-                Find a Doctor
-              </NuxtLink>
-              <NuxtLink
-                to="/departments"
-                class="flex items-center justify-center gap-2 rounded-xl p-3 text-sm font-medium text-slate-700 bg-slate-50 hover:bg-slate-100 dark:text-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-colors"
-                @click="close"
-              >
-                <Icon name="i-lucide-building-2" class="h-5 w-5 text-medical-600" />
-                Departments
-              </NuxtLink>
-              <NuxtLink
-                to="/emergency"
-                class="flex items-center justify-center gap-2 rounded-xl p-3 text-sm font-medium text-emergency-600 bg-emergency-50 hover:bg-emergency-100 dark:bg-emergency-900/30 dark:text-emergency-400 dark:hover:bg-emergency-900/50 transition-colors"
-                @click="close"
-              >
-                <Icon name="i-lucide-heart-pulse" class="h-5 w-5" />
-                Emergency Info
-              </NuxtLink>
-            </div>
+          <div class="flex items-center justify-between border-t border-slate-200 px-4 py-2.5 text-xs text-slate-500">
+            <span>Press <kbd class="font-sans font-semibold text-slate-700">Enter</kbd> to open the first result</span>
+            <NuxtLink to="/doctors" class="font-semibold text-medical-800 hover:underline" @click="close">
+              Browse all doctors
+            </NuxtLink>
           </div>
         </div>
       </div>
-    </div>
-  </TransitionRoot>
+    </Transition>
+  </Teleport>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch, nextTick } from 'vue'
-import { navigateTo } from '#app'
+import { computed, nextTick, ref, watch } from 'vue'
+import { PREVIEW_DOCTORS } from '~/data/previewDoctors'
+import { PREVIEW_DEPARTMENTS } from '~/data/previewDepartments'
 
-const props = defineProps({
-  open: { type: Boolean, default: false },
-})
-
-const emit = defineEmits<{
-  close: []
-  'update:open': [value: boolean]
-}>()
+const open = defineModel<boolean>('open', { default: false })
 
 const query = ref('')
+const inputRef = ref<HTMLInputElement | null>(null)
 
-const searchData = [
-  { id: '1', title: 'Dr. Sarah Johnson', subtitle: 'Cardiology · 15 years experience', url: '/doctors/1', icon: 'i-lucide-user-round', iconBg: 'bg-medical-100 dark:bg-medical-900/40', iconColor: 'text-medical-600 dark:text-medical-400' },
-  { id: '2', title: 'Dr. Michael Chen', subtitle: 'Neurology · Brain & Spine Specialist', url: '/doctors/2', icon: 'i-lucide-user-round', iconBg: 'bg-medical-100 dark:bg-medical-900/40', iconColor: 'text-medical-600 dark:text-medical-400' },
-  { id: '3', title: 'Dr. Emily Davis', subtitle: 'Pediatrics · Child Healthcare', url: '/doctors/3', icon: 'i-lucide-user-round', iconBg: 'bg-medical-100 dark:bg-medical-900/40', iconColor: 'text-medical-600 dark:text-medical-400' },
-  { id: '4', title: 'Cardiology Department', subtitle: 'Heart & Vascular Care', url: '/departments/cardiology', icon: 'i-lucide-heart', iconBg: 'bg-healing-100 dark:bg-healing-900/40', iconColor: 'text-healing-600 dark:text-healing-400' },
-  { id: '5', title: 'Emergency Department', subtitle: '24/7 Emergency Care', url: '/emergency', icon: 'i-lucide-heart-pulse', iconBg: 'bg-emergency-100 dark:bg-emergency-900/40', iconColor: 'text-emergency-600 dark:text-emergency-400' },
-  { id: '6', title: 'Orthopedics', subtitle: 'Bone, Joint & Muscle Care', url: '/departments/orthopedics', icon: 'i-lucide-bone', iconBg: 'bg-warm-100 dark:bg-warm-900/40', iconColor: 'text-warm-600 dark:text-warm-400' },
-  { id: '7', title: 'Pediatrics', subtitle: 'Children\'s Healthcare', url: '/departments/pediatrics', icon: 'i-lucide-baby', iconBg: 'bg-medical-100 dark:bg-medical-900/40', iconColor: 'text-medical-600 dark:text-medical-400' },
-  { id: '8', title: 'Laboratory Services', subtitle: 'Diagnostic Testing', url: '/laboratory', icon: 'i-lucide-flask-conical', iconBg: 'bg-healing-100 dark:bg-healing-900/40', iconColor: 'text-healing-600 dark:text-healing-400' },
-  { id: '9', title: 'Pharmacy', subtitle: 'Prescription & Medication', url: '/pharmacy', icon: 'i-lucide-pill', iconBg: 'bg-warm-100 dark:bg-warm-900/40', iconColor: 'text-warm-600 dark:text-warm-400' },
-  { id: '10', title: 'Radiology', subtitle: 'Imaging & Diagnostics', url: '/radiology', icon: 'i-lucide-scan', iconBg: 'bg-medical-100 dark:bg-medical-900/40', iconColor: 'text-medical-600 dark:text-medical-400' },
+interface Result {
+  to: string
+  title: string
+  subtitle: string
+  icon: string
+  tone: string
+}
+
+const staticPages: Result[] = [
+  { to: '/departments', title: 'Departments', subtitle: 'Browse care by specialty', icon: 'i-lucide-building', tone: 'bg-slate-100 text-slate-700' },
+  { to: '/services', title: 'Medical services', subtitle: 'What we offer', icon: 'i-lucide-stethoscope', tone: 'bg-slate-100 text-slate-700' },
+  { to: '/laboratory', title: 'Laboratory & diagnostics', subtitle: 'Tests and imaging', icon: 'i-lucide-flask-conical', tone: 'bg-slate-100 text-slate-700' },
+  { to: '/pharmacy', title: 'Pharmacy', subtitle: 'Prescriptions and medication', icon: 'i-lucide-pill', tone: 'bg-slate-100 text-slate-700' },
+  { to: '/emergency', title: 'Emergency care', subtitle: 'Open 24/7', icon: 'i-lucide-circle-alert', tone: 'bg-emergency-50 text-emergency-700' },
 ]
 
-const filteredResults = computed(() => {
-  if (!query.value || query.value.length < 2) return []
-  const q = query.value.toLowerCase()
-  return searchData.filter(item =>
-    item.title.toLowerCase().includes(q) ||
-    item.subtitle.toLowerCase().includes(q)
-  ).slice(0, 6)
+const quickActions = [
+  { label: 'Book appointment', to: '/appointments/book', icon: 'i-lucide-calendar-plus', iconClass: 'text-medical-700' },
+  { label: 'Find a doctor', to: '/doctors', icon: 'i-lucide-user-round-search', iconClass: 'text-medical-700' },
+  { label: 'Departments', to: '/departments', icon: 'i-lucide-building', iconClass: 'text-medical-700' },
+  { label: 'Emergency info', to: '/emergency', icon: 'i-lucide-heart-pulse', iconClass: 'text-emergency-700' },
+]
+
+const results = computed<Result[]>(() => {
+  const q = query.value.trim().toLowerCase()
+  if (q.length < 2) return []
+
+  const doctors: Result[] = PREVIEW_DOCTORS
+    .filter(d => d.name.toLowerCase().includes(q) || d.specialty.toLowerCase().includes(q))
+    .slice(0, 4)
+    .map(d => ({
+      to: `/doctors/${d.slug}`,
+      title: d.name,
+      subtitle: d.specialty,
+      icon: 'i-lucide-user-round',
+      tone: 'bg-medical-50 text-medical-700',
+    }))
+
+  const departments: Result[] = PREVIEW_DEPARTMENTS
+    .filter(d => d.name.toLowerCase().includes(q) || d.summary.toLowerCase().includes(q))
+    .slice(0, 3)
+    .map(d => ({
+      to: `/departments/${d.slug}`,
+      title: d.name,
+      subtitle: 'Department',
+      icon: 'i-lucide-building',
+      tone: 'bg-slate-100 text-slate-700',
+    }))
+
+  const pages = staticPages.filter(p => p.title.toLowerCase().includes(q)).slice(0, 2)
+
+  return [...doctors, ...departments, ...pages].slice(0, 7)
 })
 
-const handleSearch = () => {
-  if (query.value.length >= 2) {
+function close() {
+  open.value = false
+}
+
+function selectQuick(quick: { to: string }) {
+  close()
+  navigateTo(quick.to)
+}
+
+function goToFirst() {
+  const first = results.value[0]
+  if (first) {
     close()
-    navigateTo(`/search?q=${encodeURIComponent(query.value)}`)
+    navigateTo(first.to)
+  }
+  else if (query.value.trim().length >= 2) {
+    close()
+    navigateTo('/doctors')
   }
 }
 
-const clearSearch = () => {
-  query.value = ''
-}
-
-const close = () => {
-  emit('update:open', false)
-  emit('close')
-}
-
-watch(() => props.open, (val) => {
-  if (val) {
+watch(open, async (isOpen) => {
+  if (isOpen) {
     query.value = ''
-    nextTick(() => {
-      const input = document.getElementById('search-input')
-      input?.focus()
-    })
+    await nextTick()
+    inputRef.value?.focus()
   }
 })
 </script>

@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import PreviewDemoContentNotice from '../DemoContentNotice.vue'
-import { PREVIEW_DOCTORS } from '~/data/previewDoctors'
-import { PREVIEW_DEPARTMENTS } from '~/data/previewDepartments'
+/**
+ * Care-gateway preview route. It reuses the production homepage sections,
+ * pointing their internal links at the preview sub-tree.
+ */
+import HomePage from '~/components/public/HomePage.vue'
 
-const props = withDefaults(defineProps<{ basePath?: string }>(), { basePath: '/previews/care-gateway' })
-const base = computed(() => props.basePath)
-const search = ref('')
-const departmentColumns = [PREVIEW_DEPARTMENTS.slice(0, 7), PREVIEW_DEPARTMENTS.slice(7)]
+withDefaults(defineProps<{ basePath?: string }>(), { basePath: '/previews/care-gateway' })
+</script>
 
-function searchDoctors() {
-  return navigateTo({ path: `${base.value}/doctors`, query: search.value.trim() ? { q: search.value.trim() } : {} })
-}
+<template>
+  <HomePage :base-path="basePath" />
+</template>

@@ -33,9 +33,9 @@ const navItems = computed(() => [
   <div v-if="isCareGateway" class="border-b border-slate-200 bg-slate-50">
     <div class="container-main flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-2 text-sm">
       <span class="text-slate-600">MedCore Hospital · Patient and visitor information</span>
-      <a class="inline-flex items-center gap-2 font-semibold text-emergency-700 underline decoration-emergency-300 underline-offset-4 hover:text-emergency-800" href="tel:911">
+      <a class="inline-flex items-center gap-2 font-semibold text-emergency-700 underline decoration-emergency-300 underline-offset-4 hover:text-emergency-800" href="tel:112">
         <Icon name="i-lucide-phone" class="h-4 w-4" aria-hidden="true" />
-        Emergency? Call 911 (US)
+        Emergency? Call 112
       </a>
     </div>
   </div>
@@ -44,9 +44,9 @@ const navItems = computed(() => [
     <div class="container-main flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-2 text-sm">
       <p class="flex items-center gap-2">
         <Icon name="i-lucide-phone" class="h-4 w-4 text-emergency-700" aria-hidden="true" />
-        <span>For a medical emergency, call <strong>911</strong>.</span>
+        <span>For a medical emergency, call <strong>112</strong>.</span>
       </p>
-      <a class="font-semibold text-emergency-800 underline decoration-emergency-300 underline-offset-4 hover:text-emergency-950" href="tel:911">Call 911</a>
+      <a class="font-semibold text-emergency-800 underline decoration-emergency-300 underline-offset-4 hover:text-emergency-950" href="tel:112">Call 112</a>
     </div>
   </div>
 
@@ -54,9 +54,9 @@ const navItems = computed(() => [
     <div class="container-main flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-2 text-sm">
       <p class="flex items-center gap-2 text-slate-700">
         <span class="h-2 w-2 rounded-full bg-emergency-600" aria-hidden="true" />
-        Emergency? <a class="font-semibold text-emergency-700 underline decoration-emergency-300 underline-offset-4" href="tel:911">Call 911 in the U.S.</a>
+        Emergency? <a class="font-semibold text-emergency-700 underline decoration-emergency-300 underline-offset-4" href="tel:112">Call 112</a>
       </p>
-      <span class="text-slate-600">Main line <a class="font-semibold text-slate-800" href="tel:+11234567890">+1 (123) 456-7890</a></span>
+      <span class="text-slate-600">Main line <a class="font-semibold text-slate-800" href="tel:+2347045033528">0704 503 3528</a></span>
     </div>
   </div>
 

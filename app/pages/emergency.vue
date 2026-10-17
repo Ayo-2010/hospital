@@ -1,5 +1,5 @@
 <template>
-  <main class="min-h-[70vh] bg-slate-50">
+  <div class="min-h-[70vh] bg-slate-50">
     <div class="container-main py-7 sm:py-10">
       <nav aria-label="Breadcrumb" class="mb-5 text-sm text-slate-500">
         <NuxtLink to="/" class="hover:text-medical-800">Home</NuxtLink>
@@ -21,8 +21,8 @@
         <aside class="flex items-start gap-3 rounded-md border border-emergency-200 bg-emergency-50 px-4 py-3.5">
           <Icon name="i-lucide-circle-alert" class="mt-0.5 h-5 w-5 text-emergency-700" />
           <p class="text-sm leading-5 text-emergency-900">
-            <strong class="block font-semibold">Call 911 for life-threatening emergencies</strong>
-            For non-emergency medical questions, call our main line at +1 (123) 456-7890.
+            <strong class="block font-semibold">Call 112 for life-threatening emergencies</strong>
+            For non-emergency medical questions, call our main line at 0704 503 3528.
           </p>
         </aside>
       </div>
@@ -34,7 +34,7 @@
             <ul class="mt-4 space-y-3 text-slate-600">
               <li class="flex items-start gap-3">
                 <div class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-medical-100 text-medical-700">
-                  <span class="text-xs font-bold">1</span>
+                  <span class="text-xs font-semibold">1</span>
                 </div>
                 <div>
                   <h3 class="font-semibold text-slate-900">Arrival</h3>
@@ -43,7 +43,7 @@
               </li>
               <li class="flex items-start gap-3">
                 <div class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-medical-100 text-medical-700">
-                  <span class="text-xs font-bold">2</span>
+                  <span class="text-xs font-semibold">2</span>
                 </div>
                 <div>
                   <h3 class="font-semibold text-slate-900">Care</h3>
@@ -52,7 +52,7 @@
               </li>
               <li class="flex items-start gap-3">
                 <div class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-medical-100 text-medical-700">
-                  <span class="text-xs font-bold">3</span>
+                  <span class="text-xs font-semibold">3</span>
                 </div>
                 <div>
                   <h3 class="font-semibold text-slate-900">Follow-up</h3>
@@ -103,8 +103,8 @@
           <div class="rounded-lg border border-slate-200 bg-white p-5">
             <h2 class="font-display text-lg font-semibold text-slate-950">Hospital location</h2>
             <p class="mt-2 text-sm text-slate-600">
-              1234 Medical Center Drive<br />
-              Boston, MA 02115
+              12 Adeola Odeku Street<br />
+              Victoria Island, Lagos 101241
             </p>
             <a
               href="https://maps.google.com"
@@ -119,13 +119,13 @@
           <div class="flex items-start gap-3 rounded-md border border-emergency-200 bg-emergency-50 px-4 py-3.5">
             <Icon name="i-lucide-phone" class="mt-0.5 h-5 w-5 text-emergency-700" />
             <p class="text-sm leading-5 text-emergency-900">
-              <strong class="font-semibold">ER: </strong>+1 (123) 456-7890
+              <strong class="font-semibold">ER: </strong>0704 503 3528
             </p>
           </div>
         </aside>
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script setup lang="ts">

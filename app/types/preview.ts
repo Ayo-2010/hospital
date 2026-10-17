@@ -27,6 +27,14 @@ export interface DemoDepartment {
   name: string
   group: 'Primary and family care' | 'Specialty care' | 'Procedures and diagnostics'
   summary: string
+  /** Longer description used on the department detail page. */
+  description?: string
+  /** Services offered, shown as a checklist on the detail page. */
+  services?: string[]
+  /** Conditions commonly treated. */
+  conditions?: string[]
+  /** Notable equipment / technology (optional). */
+  equipment?: string
   image?: string
 }
 

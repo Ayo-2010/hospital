@@ -1,5 +1,5 @@
 <template>
-  <main class="min-h-[70vh] bg-slate-50">
+  <div class="min-h-[70vh] bg-slate-50">
     <div class="container-main py-7 sm:py-10">
       <nav aria-label="Breadcrumb" class="mb-5 flex items-center gap-2 text-sm text-slate-500">
         <NuxtLink to="/" class="hover:text-medical-800">Home</NuxtLink>
@@ -9,7 +9,7 @@
 
       <div class="mb-7 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
         <div>
-          <h1 class="font-display text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+          <h1 class="font-display text-4xl font-semibold tracking-tight text-slate-950 sm:text-[44px]">
             Request an appointment
           </h1>
           <p class="mt-2 max-w-2xl text-base leading-6 text-slate-600">
@@ -197,7 +197,7 @@
             size="lg"
             class="mt-6 w-full sm:w-auto"
             :loading="loading"
-            color="medical"
+            color="primary"
           >
             Submit request
           </UButton>
@@ -206,8 +206,8 @@
             <Icon name="i-lucide-circle-alert" class="mt-0.5 h-4 w-4 shrink-0 text-warm-700" aria-hidden="true" />
             <p>
               This is a request only — nothing is confirmed until a care team member contacts you. For a medical
-              emergency in the U.S., call
-              <a class="font-semibold underline underline-offset-2" href="tel:911">911</a>.
+              emergency, call
+              <a class="font-semibold underline underline-offset-2" href="tel:112">112</a>.
             </p>
           </div>
         </form>
@@ -219,7 +219,7 @@
               <p class="text-sm leading-5 text-emergency-900">
                 <strong class="block font-semibold">Need urgent help?</strong>
                 For a medical emergency, call
-                <a class="font-bold underline underline-offset-2" href="tel:911">911</a> or
+                <a class="font-semibold underline underline-offset-2" href="tel:112">112</a> or
                 <NuxtLink class="font-semibold underline underline-offset-2" to="/emergency">view emergency care</NuxtLink>.
               </p>
             </div>
@@ -229,7 +229,7 @@
         </aside>
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -285,6 +285,13 @@ const timePreferences = [
   { label: 'Morning', value: 'morning' },
   { label: 'Afternoon', value: 'afternoon' },
   { label: 'Any time', value: 'any' },
+]
+
+const appointmentTypes = [
+  { label: 'In-person visit', value: 'IN_PERSON' },
+  { label: 'Telemedicine', value: 'TELEMEDICINE' },
+  { label: 'Follow-up', value: 'FOLLOW_UP' },
+  { label: 'Specialist referral', value: 'SPECIALIST' },
 ]
 
 function onDepartmentChange() {

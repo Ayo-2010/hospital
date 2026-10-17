@@ -1,5 +1,5 @@
 <template>
-  <main class="min-h-[70vh] bg-slate-50">
+  <div class="min-h-[70vh] bg-slate-50">
     <div class="container-main py-7 sm:py-10">
       <nav aria-label="Breadcrumb" class="mb-5 text-sm text-slate-500">
         <NuxtLink to="/" class="hover:text-medical-800">Home</NuxtLink>
@@ -19,7 +19,7 @@
         </p>
       </div>
 
-      <div class="prose prose-sm max-w-3xl">
+      <div class="prose">
         <p>By using our services, you agree to the following terms and conditions.</p>
 
         <h2>Acceptance of Terms</h2>
@@ -41,7 +41,7 @@
         <p>We strive for accuracy but do not warrant completeness. Always consult a qualified healthcare provider.</p>
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script setup lang="ts">

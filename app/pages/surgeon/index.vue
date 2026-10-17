@@ -19,7 +19,7 @@
       </div>
       <div class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
         <div class="flex items-center gap-4">
-          <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-heal-100 text-heal-700">
+          <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-healing-100 text-healing-700">
             <Icon name="i-lucide-users" class="h-6 w-6" />
           </div>
           <div>

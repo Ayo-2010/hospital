@@ -30,7 +30,7 @@
 const appName = useRuntimeConfig().public.appName
 const route = useRoute()
 const items = computed(() => {
-  const role = route.path.split('/')[1]
+  const role = route.path.split('/')[1] ?? ''
   return getNavForRole(role.toUpperCase())
 })
 

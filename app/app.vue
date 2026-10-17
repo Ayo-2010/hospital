@@ -11,8 +11,8 @@ useHead({
   }
 })
 
-const title = 'MedCore HMS'
-const description = 'Modern Hospital Management System'
+const title = 'MedCore Hospital'
+const description = 'Compassionate hospital care — our departments, specialists, services and appointments.'
 
 useSeoMeta({
   title,

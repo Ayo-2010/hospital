@@ -1,5 +1,5 @@
 <template>
-  <main class="min-h-[70vh] bg-slate-50">
+  <div class="min-h-[70vh] bg-slate-50">
     <div class="container-main py-7 sm:py-10">
       <nav aria-label="Breadcrumb" class="mb-5 text-sm text-slate-500">
         <NuxtLink to="/" class="hover:text-medical-800">Home</NuxtLink>
@@ -19,7 +19,7 @@
         </p>
       </div>
 
-      <div class="prose prose-sm max-w-3xl">
+      <div class="prose">
         <p>Your privacy is important to us. This policy explains how we collect, use, and protect your personal information.</p>
 
         <h2>Information we collect</h2>
@@ -54,12 +54,12 @@
         <h2>Contact us</h2>
         <p>If you have questions about this privacy policy, contact our Privacy Officer:</p>
         <p>
-          Email: <a class="text-medical-800" href="mailto:privacy@medcorehms.com">privacy@medcorehms.com</a><br />
-          Phone: <a class="text-medical-800" href="tel:+11234567890">+1 (123) 456-7890</a>
+          Email: <a class="text-medical-800" href="mailto:privacy@medcorehospital.com">privacy@medcorehospital.com</a><br />
+          Phone: <a class="text-medical-800" href="tel:+2347045033528">0704 503 3528</a>
         </p>
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script setup lang="ts">

@@ -22,8 +22,18 @@
 
 <script setup lang="ts">
 const router = useRouter()
-const { user } = useSession()
-const userName = computed(() => user.value?.name || 'Account')
+const { session, clearSession } = useSession()
+const userName = computed(() => session.value?.user?.firstName || session.value?.user?.email || 'Account')
+
+async function handleSignOut() {
+  try {
+    await $fetch('/api/v1/auth/logout', { method: 'POST' })
+  } catch {
+    // Clear the session locally even if the request fails.
+  }
+  clearSession()
+  await router.push('/auth/login')
+}
 
 const items = [
   [
@@ -47,10 +57,7 @@ const items = [
     {
       label: 'Sign out',
       icon: 'i-lucide-log-out',
-      click: async () => {
-        await signOut()
-        await router.push('/auth/login')
-      },
+      click: handleSignOut,
       class: 'text-emergency-600 hover:bg-emergency-50 dark:text-emergency-400 dark:hover:bg-emergency-900/20',
     },
   ],

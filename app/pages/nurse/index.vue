@@ -19,7 +19,7 @@
       </div>
       <div class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
         <div class="flex items-center gap-4">
-          <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-heal-100 text-heal-700">
+          <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-healing-100 text-healing-700">
             <Icon name="i-lucide-activity" class="h-6 w-6" />
           </div>
           <div>
@@ -77,7 +77,7 @@
         <p class="mt-1 text-sm text-slate-600">Pending nursing tasks</p>
         <div class="mt-4 space-y-3">
           <div class="flex items-center gap-3 text-sm text-slate-600">
-            <Icon name="i-lucide-check-square" class="h-4 w-4 text-medical-700" />
+            <Icon name="i-lucide-square-check" class="h-4 w-4 text-medical-700" />
             <span>Administer morning medications</span>
           </div>
           <div class="flex items-center gap-3 text-sm text-slate-600">

@@ -1,5 +1,5 @@
 <template>
-  <main class="min-h-[70vh] bg-slate-50">
+  <div class="min-h-[70vh] bg-slate-50">
     <div class="container-main py-7 sm:py-10">
       <nav aria-label="Breadcrumb" class="mb-5 text-sm text-slate-500">
         <NuxtLink to="/" class="hover:text-medical-800">Home</NuxtLink>
@@ -49,11 +49,11 @@
               <Icon name="i-lucide-calendar-plus" class="h-4 w-4" />
             </NuxtLink>
             <a
-              href="tel:+11234567890"
+              href="tel:+2347045033528"
               class="inline-flex items-center gap-2 text-sm font-semibold text-medical-800"
             >
               <Icon name="i-lucide-phone" class="h-4 w-4" />
-              +1 (123) 456-7890
+              0704 503 3528
             </a>
           </div>
 
@@ -82,7 +82,7 @@
         </aside>
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script setup lang="ts">

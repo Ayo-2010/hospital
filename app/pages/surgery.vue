@@ -1,5 +1,5 @@
 <template>
-  <main class="min-h-[70vh] bg-slate-50">
+  <div class="min-h-[70vh] bg-slate-50">
     <div class="container-main py-7 sm:py-10">
       <nav aria-label="Breadcrumb" class="mb-5 text-sm text-slate-500">
         <NuxtLink to="/" class="hover:text-medical-800">Home</NuxtLink>
@@ -38,25 +38,25 @@
             <ol class="mt-4 space-y-3 text-slate-600">
               <li class="flex items-start gap-3">
                 <div class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-medical-100 text-medical-700">
-                  <span class="text-xs font-bold">1</span>
+                  <span class="text-xs font-semibold">1</span>
                 </div>
                 <p>Pre-operative consultation and testing at least 48 hours before surgery.</p>
               </li>
               <li class="flex items-start gap-3">
                 <div class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-medical-100 text-medical-700">
-                  <span class="text-xs font-bold">2</span>
+                  <span class="text-xs font-semibold">2</span>
                 </div>
                 <p>Arrive at the surgical center 2 hours before your scheduled procedure.</p>
               </li>
               <li class="flex items-start gap-3">
                 <div class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-medical-100 text-medical-700">
-                  <span class="text-xs font-bold">3</span>
+                  <span class="text-xs font-semibold">3</span>
                 </div>
                 <p>Recovery in our dedicated post-anesthesia care unit (PACU).</p>
               </li>
               <li class="flex items-start gap-3">
                 <div class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-medical-100 text-medical-700">
-                  <span class="text-xs font-bold">4</span>
+                  <span class="text-xs font-semibold">4</span>
                 </div>
                 <p>Follow-up appointment with your surgeon within 7-14 days.</p>
               </li>
@@ -67,11 +67,11 @@
             <h2 class="font-display text-xl font-semibold text-medical-950">Preparing for surgery</h2>
             <p class="mt-2 text-sm text-medical-800">Contact our surgical scheduling team with any questions about your upcoming procedure.</p>
             <a
-              href="tel:+11234567890"
+              href="tel:+2347045033528"
               class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-medical-800"
             >
               <Icon name="i-lucide-phone" class="h-4 w-4" />
-              +1 (123) 456-7890
+              0704 503 3528
             </a>
           </div>
         </div>
@@ -80,7 +80,7 @@
           <div class="flex items-start gap-3 rounded-md border border-emergency-200 bg-emergency-50 px-4 py-3.5">
             <Icon name="i-lucide-circle-alert" class="mt-0.5 h-5 w-5 text-emergency-700" />
             <p class="text-sm leading-5 text-emergency-900">
-              <strong class="font-semibold">After-hours emergencies?</strong> Call 911 or go to the ER.
+              <strong class="font-semibold">After-hours emergencies?</strong> Call 112 or go to the ER.
             </p>
           </div>
           <div class="rounded-lg border border-slate-200 bg-white p-5">
@@ -91,7 +91,7 @@
         </aside>
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script setup lang="ts">

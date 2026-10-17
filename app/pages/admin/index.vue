@@ -33,7 +33,7 @@
             <span>New staff registration</span>
           </div>
           <div class="flex items-center gap-3 text-sm text-slate-600">
-            <Icon name="i-lucide-calendar-check" class="h-4 w-4 text-heal-700" />
+            <Icon name="i-lucide-calendar-check" class="h-4 w-4 text-healing-700" />
             <span>Appointment completed</span>
           </div>
           <div class="flex items-center gap-3 text-sm text-slate-600">
