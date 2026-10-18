@@ -18,7 +18,7 @@
         <span class="badge-medical">{{ specialty }}</span>
       </div>
       <p class="mt-4 flex-1 text-sm leading-6 text-slate-600">{{ bio }}</p>
-      <NuxtLink :to="`/doctors/${slug}`" class="link mt-5 inline-flex items-center gap-2 text-sm">
+      <NuxtLink v-if="to" :to="to" class="link mt-5 inline-flex items-center gap-2 text-sm">
         View Profile
         <Icon name="i-lucide-chevron-right" class="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
       </NuxtLink>
@@ -27,13 +27,13 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
+defineProps<{
   name: string
   title: string
   image: string
   bio: string
   specialty: string
+  /** Profile page for this leader, when they also appear in a directory. */
+  to?: string
 }>()
-
-const slug = props.name.toLowerCase().replace(/\s+/g, '-')
 </script>

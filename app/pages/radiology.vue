@@ -70,11 +70,11 @@
             <dl class="mt-3 space-y-2 text-sm">
               <div class="flex justify-between gap-4">
                 <dt class="text-slate-600">Monday – Friday</dt>
-                <dd class="font-medium text-slate-900">7:00 AM – 8:00 PM</dd>
+                <dd class="font-medium text-slate-900">7am – 8pm</dd>
               </div>
               <div class="flex justify-between gap-4">
                 <dt class="text-slate-600">Saturday</dt>
-                <dd class="font-medium text-slate-900">8:00 AM – 4:00 PM</dd>
+                <dd class="font-medium text-slate-900">8am – 4pm</dd>
               </div>
               <div class="flex justify-between gap-4">
                 <dt class="text-slate-600">Sunday</dt>
@@ -115,7 +115,7 @@ const services = [
 ]
 
 const prep = [
-  'Bring your referral, photo ID and insurance details to your appointment.',
+  'Bring your referral, photo ID and HMO details to your appointment.',
   'Tell us if you are — or may be — pregnant before any imaging.',
   'Fasting or contrast preparation may apply to some CT and MRI scans; we will tell you in advance.',
   'Arrive 15 minutes early so we can complete a short safety checklist.',

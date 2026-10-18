@@ -37,13 +37,13 @@
 import BenefitCard from './BenefitCard.vue'
 
 const benefits = [
-  { title: 'Competitive Compensation', description: 'Market-leading salaries with annual reviews, performance bonuses, and shift differentials.', icon: 'i-lucide-dollar-sign' },
-  { title: 'Comprehensive Benefits', description: 'Medical, dental, vision, life insurance, 401(k) with match, and generous PTO starting day one.', icon: 'i-lucide-shield-check' },
-  { title: 'Professional Growth', description: 'Tuition reimbursement, certification support, leadership development, and clear career pathways.', icon: 'i-lucide-graduation-cap' },
-  { title: 'Work-Life Balance', description: 'Flexible scheduling, self-scheduling options, wellness programs, and employee assistance program.', icon: 'i-lucide-heart-handshake' },
-  { title: 'Cutting-Edge Technology', description: 'Work with the latest medical technology, EHR systems, and innovation lab opportunities.', icon: 'i-lucide-cpu' },
-  { title: 'Magnet Recognition', description: 'ANCC Magnet-recognized for nursing excellence - a testament to our supportive culture.', icon: 'i-lucide-award' },
-  { title: 'Diversity & Inclusion', description: 'Commitment to equity with employee resource groups, bias training, and inclusive policies.', icon: 'i-lucide-users' },
-  { title: 'Community Impact', description: 'Volunteer opportunities, community health initiatives, and global health partnerships.', icon: 'i-lucide-globe' },
+  { title: 'Competitive pay', description: 'Market-leading salaries with annual reviews, performance bonuses and shift allowances.', icon: 'i-lucide-banknote' },
+  { title: 'Health cover', description: 'Comprehensive HMO cover for you and your family, group life assurance and a contributory pension.', icon: 'i-lucide-shield-check' },
+  { title: 'Professional growth', description: 'Study support, professional registration fees, leadership development and clear career pathways.', icon: 'i-lucide-graduation-cap' },
+  { title: 'Work-life balance', description: 'Predictable rosters, self-scheduling options, wellness support and an employee assistance programme.', icon: 'i-lucide-heart-handshake' },
+  { title: 'Modern facilities', description: 'Work with current medical technology and electronic health records across both campuses.', icon: 'i-lucide-cpu' },
+  { title: 'Clinical education', description: 'Funded continuing professional development, clinical supervision and mentorship for every clinical role.', icon: 'i-lucide-award' },
+  { title: 'Inclusion & belonging', description: 'A commitment to fairness, staff networks and inclusive policies for every colleague.', icon: 'i-lucide-users' },
+  { title: 'Community impact', description: 'Outreach clinics, community health initiatives and partnerships across Lagos.', icon: 'i-lucide-globe' },
 ]
 </script>

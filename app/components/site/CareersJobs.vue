@@ -24,17 +24,17 @@
           <div>
             <label for="dept-filter" class="sr-only">Filter by department</label>
             <select id="dept-filter" v-model="selectedDepartment" class="input-field sm:w-48">
-              <option value="">All Departments</option>
+              <option value="">All departments</option>
               <option v-for="dept in departments" :key="dept" :value="dept">{{ dept }}</option>
             </select>
           </div>
           <div>
             <label for="type-filter" class="sr-only">Filter by type</label>
             <select id="type-filter" v-model="selectedType" class="input-field sm:w-40">
-              <option value="">All Types</option>
-              <option value="full-time">Full-Time</option>
-              <option value="part-time">Part-Time</option>
-              <option value="per-diem">Per Diem</option>
+              <option value="">All types</option>
+              <option value="full-time">Full-time</option>
+              <option value="part-time">Part-time</option>
+              <option value="locum">Locum</option>
             </select>
           </div>
         </div>
@@ -58,7 +58,7 @@
         <p class="mb-4 text-base leading-7 text-slate-600">Don't see the perfect fit?</p>
         <a href="mailto:careers@medcorehospital.com" class="btn-primary">
           <Icon name="i-lucide-mail" class="h-5 w-5" aria-hidden="true" />
-          Send Your Resume
+          Send your CV
         </a>
       </div>
     </div>
@@ -78,24 +78,24 @@ const allJobs: {
   title: string
   department: string
   location: string
-  type: 'full-time' | 'part-time' | 'per-diem'
+  type: 'full-time' | 'part-time' | 'locum'
   shift: string
   experience: string
   posted: string
   featured?: boolean
 }[] = [
-  { id: '1', title: 'Registered Nurse - Med/Surg', department: 'Nursing', location: 'Victoria Island Campus', type: 'full-time', shift: 'Night (7p-7a)', experience: '1+ year', posted: '2024-01-15', featured: true },
-  { id: '2', title: 'Registered Nurse - ICU', department: 'Nursing', location: 'Victoria Island Campus', type: 'full-time', shift: 'Day (7a-7p)', experience: '2+ years ICU', posted: '2024-01-14', featured: true },
-  { id: '3', title: 'Registered Nurse - ER', department: 'Nursing', location: 'Victoria Island Campus', type: 'full-time', shift: 'Rotating', experience: '1+ year ER preferred', posted: '2024-01-13' },
-  { id: '4', title: 'Medical Laboratory Technician', department: 'Laboratory', location: 'Victoria Island Campus', type: 'full-time', shift: 'Day', experience: 'ASCP certification', posted: '2024-01-12' },
-  { id: '5', title: 'Pharmacist', department: 'Pharmacy', location: 'Victoria Island Campus', type: 'full-time', shift: 'Rotating', experience: 'PharmD, license', posted: '2024-01-11' },
-  { id: '6', title: 'Physical Therapist', department: 'Rehabilitation', location: 'Wellness Center', type: 'full-time', shift: 'Day', experience: 'DPT, license', posted: '2024-01-10' },
-  { id: '7', title: 'Patient Access Representative', department: 'Administration', location: 'Victoria Island Campus', type: 'full-time', shift: 'Day', experience: 'Customer service', posted: '2024-01-09' },
-  { id: '8', title: 'Environmental Services Tech', department: 'Support Services', location: 'Victoria Island Campus', type: 'full-time', shift: 'Evening', experience: 'Entry level', posted: '2024-01-08' },
-  { id: '9', title: 'OR Surgical Technologist', department: 'Surgery', location: 'Victoria Island Campus', type: 'full-time', shift: 'Day', experience: 'CST certification', posted: '2024-01-07' },
-  { id: '10', title: 'Radiology Technologist', department: 'Radiology', location: 'Victoria Island Campus', type: 'full-time', shift: 'Rotating', experience: 'ARRT certification', posted: '2024-01-06' },
-  { id: '11', title: 'Respiratory Therapist', department: 'Respiratory', location: 'Victoria Island Campus', type: 'full-time', shift: 'Night', experience: 'RRT credential', posted: '2024-01-05' },
-  { id: '12', title: 'Clinical Social Worker', department: 'Case Management', location: 'Victoria Island Campus', type: 'full-time', shift: 'Day', experience: 'LCSW, healthcare exp', posted: '2024-01-04' },
+  { id: '1', title: 'Registered Nurse - Medical/Surgical Ward', department: 'Nursing', location: 'Victoria Island Campus', type: 'full-time', shift: 'Night (7pm-7am)', experience: '1+ year', posted: '2026-10-15', featured: true },
+  { id: '2', title: 'Registered Nurse - Intensive Care', department: 'Nursing', location: 'Victoria Island Campus', type: 'full-time', shift: 'Day (7am-7pm)', experience: '2+ years ICU', posted: '2026-10-12', featured: true },
+  { id: '3', title: 'Registered Nurse - Accident & Emergency', department: 'Nursing', location: 'Victoria Island Campus', type: 'full-time', shift: 'Rotating', experience: '1+ year A&E preferred', posted: '2026-10-10' },
+  { id: '4', title: 'Medical Laboratory Scientist', department: 'Laboratory', location: 'Victoria Island Campus', type: 'full-time', shift: 'Day', experience: 'MLSCN registered', posted: '2026-10-08' },
+  { id: '5', title: 'Pharmacist', department: 'Pharmacy', location: 'Victoria Island Campus', type: 'full-time', shift: 'Rotating', experience: 'B.Pharm, PCN licensed', posted: '2026-10-05' },
+  { id: '6', title: 'Physiotherapist', department: 'Rehabilitation', location: 'Wellness & Rehabilitation Centre', type: 'full-time', shift: 'Day', experience: 'BPT, licensed', posted: '2026-10-03' },
+  { id: '7', title: 'Patient Services Officer', department: 'Administration', location: 'Victoria Island Campus', type: 'full-time', shift: 'Day', experience: 'Customer service', posted: '2026-10-01' },
+  { id: '8', title: 'Housekeeping & Support Assistant', department: 'Support Services', location: 'Victoria Island Campus', type: 'full-time', shift: 'Evening', experience: 'Entry level', posted: '2026-09-28' },
+  { id: '9', title: 'Theatre Nurse', department: 'Surgery', location: 'Victoria Island Campus', type: 'full-time', shift: 'Day', experience: 'Perioperative experience', posted: '2026-09-25' },
+  { id: '10', title: 'Radiographer', department: 'Radiology', location: 'Victoria Island Campus', type: 'full-time', shift: 'Rotating', experience: 'RRBN registered', posted: '2026-09-22' },
+  { id: '11', title: 'Respiratory Therapist', department: 'Respiratory', location: 'Victoria Island Campus', type: 'full-time', shift: 'Night', experience: 'Respiratory care experience', posted: '2026-09-20' },
+  { id: '12', title: 'Medical Social Worker', department: 'Case Management', location: 'Ikoyi Specialist Centre', type: 'part-time', shift: 'Day', experience: 'Healthcare experience', posted: '2026-09-18' },
 ]
 
 const departments = [...new Set(allJobs.map(j => j.department))].sort()

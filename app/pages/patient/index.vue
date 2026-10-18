@@ -59,17 +59,17 @@
         <div class="mt-4 space-y-3">
           <div class="flex items-center justify-between rounded-md bg-slate-50 p-3 text-sm">
             <div>
-              <p class="font-medium text-slate-900">Dr. Sarah Johnson</p>
+              <p class="font-medium text-slate-900">Dr. Adaeze Nwosu</p>
               <p class="text-xs text-slate-500">Cardiology</p>
             </div>
-            <span class="text-xs font-medium text-medical-800">Oct 18, 10:00 AM</span>
+            <span class="text-xs font-medium text-medical-800">18 Oct 2026, 10:00</span>
           </div>
           <div class="flex items-center justify-between rounded-md bg-slate-50 p-3 text-sm">
             <div>
-              <p class="font-medium text-slate-900">Dr. Michael Chen</p>
+              <p class="font-medium text-slate-900">Dr. Emeka Nwankwo</p>
               <p class="text-xs text-slate-500">Neurology</p>
             </div>
-            <span class="text-xs font-medium text-medical-800">Oct 22, 2:30 PM</span>
+            <span class="text-xs font-medium text-medical-800">22 Oct 2026, 14:30</span>
           </div>
         </div>
       </div>

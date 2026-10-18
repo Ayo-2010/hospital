@@ -40,7 +40,7 @@
 
       <figure class="m-0 overflow-hidden rounded-xl border border-slate-200 bg-slate-100 lg:justify-self-end">
         <img
-          src="https://images.unsplash.com/photo-1527613552647-967b7b003264?auto=compress&cs=tinysrgb&w=1600&q=80"
+          :src="MEDIA.clinicianAtScreen"
           alt="Healthcare professionals working together in a modern hospital"
           class="h-[280px] w-full object-cover sm:h-[420px]"
           width="1100"
@@ -54,6 +54,7 @@
 </template>
 
 <script setup lang="ts">
+import { MEDIA } from '~/data/media'
 const highlights = [
   { label: 'Salary & Benefits', value: 'Competitive', icon: 'i-lucide-landmark' },
   { label: 'Learning & Development', value: 'Growth', icon: 'i-lucide-graduation-cap' },

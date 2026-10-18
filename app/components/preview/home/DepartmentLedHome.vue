@@ -3,6 +3,7 @@ import PreviewDemoContentNotice from '../DemoContentNotice.vue'
 import { PREVIEW_DOCTORS } from '~/data/previewDoctors'
 import { PREVIEW_DEPARTMENTS, PREVIEW_DEPARTMENT_GROUPS } from '~/data/previewDepartments'
 import type { DemoDepartment } from '~/types/preview'
+import { MEDIA } from '~/data/media'
 
 const base = '/previews/department-led'
 const departmentsByGroup = (group: DemoDepartment['group']) => PREVIEW_DEPARTMENTS.filter((department) => department.group === group)
@@ -50,7 +51,7 @@ const serviceLinks = [
         </div>
 
         <figure class="relative m-0 min-h-[280px] overflow-hidden rounded-lg bg-slate-200 lg:min-h-[350px]">
-          <img class="absolute inset-0 h-full w-full object-cover" src="https://images.pexels.com/photos/4431986/pexels-photo-4431986.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80" alt="Hospital directional signage inside a contemporary corridor. Photo by Shuxuan Cao via Pexels." width="1100" height="733" loading="lazy" decoding="async">
+          <img class="absolute inset-0 h-full w-full object-cover" :src="MEDIA.wayfinding" alt="Hospital directional signage inside a contemporary corridor. Photo by Shuxuan Cao via Pexels." width="1100" height="733" loading="lazy" decoding="async">
           <figcaption class="absolute inset-x-0 bottom-0 bg-slate-950/75 px-4 py-3 text-sm leading-5 text-white">Clear directions and practical information for your visit.</figcaption>
         </figure>
       </div>
@@ -93,7 +94,7 @@ const serviceLinks = [
     </section>
 
     <section class="container-main py-12 sm:py-16" aria-labelledby="department-sample-doctors-title">
-      <div class="flex flex-col gap-4 border-b border-slate-200 pb-5 sm:flex-row sm:items-end sm:justify-between"><div><h2 id="department-sample-doctors-title" class="font-display text-3xl font-semibold text-slate-950">Meet a few sample clinicians</h2><p class="mt-2 text-sm text-slate-600">Fictional demonstration profiles — not real physicians.</p></div><NuxtLink :to="`${base}/doctors`" class="text-sm font-semibold text-medical-800 underline underline-offset-4">Browse the doctor directory <Icon name="i-lucide-arrow-right" class="ml-1 inline h-4 w-4" aria-hidden="true" /></NuxtLink></div>
+      <div class="flex flex-col gap-4 border-b border-slate-200 pb-5 sm:flex-row sm:items-end sm:justify-between"><div><h2 id="department-sample-doctors-title" class="font-display text-3xl font-semibold text-slate-950">Meet a few sample clinicians</h2><p class="mt-2 text-sm text-slate-600">Fictional demonstration profiles — not real doctors.</p></div><NuxtLink :to="`${base}/doctors`" class="text-sm font-semibold text-medical-800 underline underline-offset-4">Browse the doctor directory <Icon name="i-lucide-arrow-right" class="ml-1 inline h-4 w-4" aria-hidden="true" /></NuxtLink></div>
       <PreviewDemoContentNotice class="mt-3" compact />
       <div class="divide-y divide-slate-200"><NuxtLink v-for="doctor in PREVIEW_DOCTORS.slice(0, 3)" :key="doctor.id" :to="`/doctors/${doctor.slug}`" class="group grid gap-2 py-4 sm:grid-cols-[1.25fr_1fr_1fr_auto] sm:items-center sm:gap-5"><span class="font-semibold text-slate-900 group-hover:text-medical-800">{{ doctor.name }}</span><span class="text-sm text-slate-700">{{ doctor.specialty }}</span><span class="text-sm text-slate-600">{{ doctor.location }}</span><span class="inline-flex items-center gap-2 text-sm font-semibold text-medical-800">View profile <Icon name="i-lucide-arrow-right" class="h-4 w-4" aria-hidden="true" /></span></NuxtLink></div>
     </section>

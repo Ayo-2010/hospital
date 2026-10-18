@@ -87,75 +87,20 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { findSurgeon } from '~/data/clinicians'
 
 const route = useRoute()
-const surgeonSlug = route.params.id as string
+const slug = route.params.slug as string
 
-const surgeons: Record<string, any> = {
-  'james-anderson': {
-    id: '1',
-    slug: 'james-anderson',
-    name: 'Dr. James Anderson',
-    title: 'Chief of Surgery',
-    specialty: 'General Surgery',
-    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80',
-    experience: '22 years',
-    bio: 'Pioneer in minimally invasive surgical techniques. Published 100+ peer-reviewed articles and leads the surgical residency program.',
-  },
-  'robert-kim': {
-    id: '2',
-    slug: 'robert-kim',
-    name: 'Dr. Robert Kim',
-    title: 'Cardiothoracic Surgeon',
-    specialty: 'Cardiothoracic Surgery',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
-    experience: '18 years',
-    bio: 'Specialist in heart and lung surgery with expertise in complex cardiovascular procedures and transplant surgery.',
-  },
-  'susan-martinez': {
-    id: '3',
-    slug: 'susan-martinez',
-    name: 'Dr. Susan Martinez',
-    title: 'Orthopedic Surgeon',
-    specialty: 'Orthopedic Surgery',
-    image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80',
-    experience: '15 years',
-    bio: 'Joint replacement and sports medicine specialist. Performs 200+ joint replacements annually with excellent outcomes.',
-  },
-  'david-chen': {
-    id: '4',
-    slug: 'david-chen',
-    name: 'Dr. David Chen',
-    title: 'Neurosurgeon',
-    specialty: 'Neurosurgery',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80',
-    experience: '14 years',
-    bio: 'Brain and spine surgery specialist with expertise in minimally invasive neurosurgical techniques and tumor removal.',
-  },
-  'lisa-williams': {
-    id: '5',
-    slug: 'lisa-williams',
-    name: 'Dr. Lisa Williams',
-    title: 'Plastic Surgeon',
-    specialty: 'Plastic & Reconstructive Surgery',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
-    experience: '11 years',
-    bio: 'Reconstructive and aesthetic surgeon specializing in post-cancer reconstruction, burn care, and cosmetic procedures.',
-  },
-  'mark-thompson': {
-    id: '6',
-    slug: 'mark-thompson',
-    name: 'Dr. Mark Thompson',
-    title: 'Vascular Surgeon',
-    specialty: 'Vascular Surgery',
-    image: 'https://images.unsplash.com/photo-1506165006114-8142f0767898?w=400&q=80',
-    experience: '16 years',
-    bio: 'Vascular and endovascular surgeon treating arterial disease, aneurysms, and circulation disorders.',
-  },
+const surgeon = findSurgeon(slug)
+
+if (!surgeon) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Surgeon not found',
+    fatal: true,
+  })
 }
 
-const surgeon = computed(() => surgeons[surgeonSlug] || surgeons['james-anderson'])
-
-useHead({ title: `${surgeon.value.name} | MedCore Hospital` })
+useHead({ title: () => `${surgeon.name} | Surgical Team | MedCore Hospital` })
 </script>

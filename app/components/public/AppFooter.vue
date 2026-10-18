@@ -34,7 +34,7 @@
       </nav>
 
       <nav aria-labelledby="footer-centers">
-        <h2 id="footer-centers" class="text-sm font-semibold text-slate-900">Centers &amp; services</h2>
+        <h2 id="footer-centers" class="text-sm font-semibold text-slate-900">Centres &amp; services</h2>
         <ul class="mt-3.5 space-y-2.5 text-sm">
           <li v-for="link in centerLinks" :key="link.to">
             <NuxtLink :to="link.to" class="text-slate-600 underline-offset-4 hover:text-medical-800 hover:underline">{{ link.label }}</NuxtLink>

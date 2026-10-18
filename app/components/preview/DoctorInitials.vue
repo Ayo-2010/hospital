@@ -7,5 +7,20 @@ const tones = { blue: 'bg-medical-100 text-medical-900', slate: 'bg-slate-200 te
 </script>
 
 <template>
-  <span aria-hidden="true" class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full font-display text-base font-semibold" :class="tones[tone]">{{ initials }}</span>
+  <img
+    v-if="doctor.image"
+    :src="doctor.image"
+    :alt="doctor.name"
+    class="h-14 w-14 shrink-0 rounded-full border border-slate-200 bg-slate-100 object-cover"
+    width="56"
+    height="56"
+    loading="lazy"
+    decoding="async"
+  >
+  <span
+    v-else
+    aria-hidden="true"
+    class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full font-display text-base font-semibold"
+    :class="tones[tone]"
+  >{{ initials }}</span>
 </template>

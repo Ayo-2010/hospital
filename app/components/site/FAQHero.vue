@@ -6,7 +6,7 @@
           <p class="eyebrow">Quick answers</p>
           <h1 id="faq-hero-heading" class="mt-3">Frequently asked questions</h1>
           <p class="mt-4 max-w-xl text-base leading-7 text-slate-600">
-            Find answers to common questions about our services, appointments, billing, insurance,
+            Find answers to common questions about our services, appointments, billing, HMO cover,
             and medical records at MedCore Hospital.
           </p>
 
@@ -23,7 +23,7 @@
         </div>
 
         <img
-          src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=compress&cs=tinysrgb&w=1200&q=80"
+          :src="MEDIA.stethoscope"
           alt="Patient and care team in discussion"
           class="aspect-[4/3] w-full rounded-xl border border-slate-200 bg-slate-100 object-cover object-center"
           width="720"
@@ -35,3 +35,7 @@
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import { MEDIA } from '~/data/media'
+</script>

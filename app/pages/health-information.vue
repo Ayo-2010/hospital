@@ -40,16 +40,16 @@
 
       <div class="mt-12 grid gap-6 lg:grid-cols-3">
         <figure class="m-0">
-          <img class="aspect-video w-full rounded-lg border border-slate-200 bg-slate-100 object-cover object-center" src="https://images.pexels.com/photos/3786166/pexels-photo-3786166.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Patient room with large window and modern furnishings" width="400" height="250" loading="lazy" decoding="async" />
-          <figcaption class="mt-1.5 text-xs text-slate-500">Comfortable patient rooms — photo by Rameez Nawaz on Pexels.</figcaption>
+          <img class="aspect-video w-full rounded-lg border border-slate-200 bg-slate-100 object-cover object-center" :src="MEDIA.inpatientWard" alt="Hospital room with a bed and bedside equipment" width="400" height="250" loading="lazy" decoding="async" />
+          <figcaption class="mt-1.5 text-xs text-slate-500">Comfortable patient rooms</figcaption>
         </figure>
         <figure class="m-0">
-          <img class="aspect-video w-full rounded-lg border border-slate-200 bg-slate-100 object-cover object-center" src="https://images.pexels.com/photos/4386479/pexels-photo-4386479.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Medical team in discussion" width="400" height="250" loading="lazy" decoding="async" />
-          <figcaption class="mt-1.5 text-xs text-slate-500">Team collaboration — photo by Christina M on Pexels.</figcaption>
+          <img class="aspect-video w-full rounded-lg border border-slate-200 bg-slate-100 object-cover object-center" :src="MEDIA.consultation" alt="Clinician speaking with a patient" width="400" height="250" loading="lazy" decoding="async" />
+          <figcaption class="mt-1.5 text-xs text-slate-500">Team collaboration</figcaption>
         </figure>
         <figure class="m-0">
-          <img class="aspect-video w-full rounded-lg border border-slate-200 bg-slate-100 object-cover object-center" src="https://images.pexels.com/photos/5325833/pexels-photo-5325833.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Doctor examining a patient" width="400" height="250" loading="lazy" decoding="async" />
-          <figcaption class="mt-1.5 text-xs text-slate-500">Physician consultation — photo by Karolina Grabowska on Pexels.</figcaption>
+          <img class="aspect-video w-full rounded-lg border border-slate-200 bg-slate-100 object-cover object-center" :src="MEDIA.consultationRoom" alt="Colleagues talking through care in a treatment room" width="400" height="250" loading="lazy" decoding="async" />
+          <figcaption class="mt-1.5 text-xs text-slate-500">Physician consultation</figcaption>
         </figure>
       </div>
 
@@ -71,6 +71,7 @@
 </template>
 
 <script setup lang="ts">
+import { MEDIA } from '~/data/media'
 useHead({ title: 'Health Information | MedCore Hospital' })
 
 const articles = [

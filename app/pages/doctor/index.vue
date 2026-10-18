@@ -62,21 +62,21 @@
               <p class="font-medium text-slate-900">John Smith</p>
               <p class="text-xs text-slate-500">Cardiology follow-up</p>
             </div>
-            <span class="text-xs font-medium text-medical-800">9:00 AM</span>
+            <span class="text-xs font-medium text-medical-800">9am</span>
           </div>
           <div class="flex items-center justify-between rounded-md bg-slate-50 p-3 text-sm">
             <div>
               <p class="font-medium text-slate-900">Maria Garcia</p>
               <p class="text-xs text-slate-500">New patient consultation</p>
             </div>
-            <span class="text-xs font-medium text-medical-800">10:30 AM</span>
+            <span class="text-xs font-medium text-medical-800">10:30am</span>
           </div>
           <div class="flex items-center justify-between rounded-md bg-slate-50 p-3 text-sm">
             <div>
               <p class="font-medium text-slate-900">Robert Chen</p>
               <p class="text-xs text-slate-500">Diabetes management</p>
             </div>
-            <span class="text-xs font-medium text-medical-800">2:00 PM</span>
+            <span class="text-xs font-medium text-medical-800">2pm</span>
           </div>
         </div>
       </div>

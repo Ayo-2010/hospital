@@ -25,6 +25,7 @@
             :image="leader.image"
             :bio="leader.bio"
             :specialty="leader.specialty"
+            :to="leader.to"
           />
         </div>
 
@@ -32,7 +33,7 @@
           <div class="flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-soft">
             <img
               class="h-64 w-full object-cover"
-              src="https://images.pexels.com/photos/4386479/pexels-photo-4386479.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80"
+              :src="MEDIA.clinicalTeam"
               alt="Medical team collaborating"
               width="1200"
               height="400"
@@ -42,7 +43,7 @@
               <h3 class="font-display text-lg font-semibold tracking-tight text-slate-950">Team Collaboration</h3>
               <p class="mt-2 mb-6 flex-1 text-sm leading-6 text-slate-600">
                 Our multidisciplinary teams work together across departments to deliver
-                coordinated, patient-centered care.
+                coordinated, patient-centred care.
               </p>
               <NuxtLink to="/facilities" class="link inline-flex items-center gap-2 text-sm">
                 Explore Facilities <Icon name="i-lucide-arrow-right" class="h-4 w-4" aria-hidden="true" />
@@ -52,16 +53,16 @@
           <div class="flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-soft">
             <img
               class="h-64 w-full object-cover"
-              src="https://images.pexels.com/photos/5325833/pexels-photo-5325833.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80"
+              :src="MEDIA.consultation"
               alt="Doctor examining a patient"
               width="1200"
               height="400"
               loading="lazy"
             >
             <div class="flex flex-1 flex-col p-6">
-              <h3 class="font-display text-lg font-semibold tracking-tight text-slate-950">Patient-Centered Care</h3>
+              <h3 class="font-display text-lg font-semibold tracking-tight text-slate-950">Patient-Centred Care</h3>
               <p class="mt-2 mb-6 flex-1 text-sm leading-6 text-slate-600">
-                Every patient receives individual attention with personalized treatment plans
+                Every patient receives individual attention with personalised treatment plans
                 tailored to their unique needs.
               </p>
               <NuxtLink to="/departments" class="link inline-flex items-center gap-2 text-sm">
@@ -72,7 +73,7 @@
           <div class="flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-soft">
             <img
               class="h-64 w-full object-cover"
-              src="https://images.pexels.com/photos/3786166/pexels-photo-3786166.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80"
+              :src="MEDIA.compassionateCare"
               alt="Comfortable patient room"
               width="1200"
               height="400"
@@ -108,12 +109,13 @@ import LeaderCard from '~/components/site/LeaderCard.vue'
 import FacilitiesSection from '~/components/site/FacilitiesSection.vue'
 import Accreditations from '~/components/site/Accreditations.vue'
 import CTASection from '~/components/site/CTASection.vue'
+import { MEDIA, PORTRAITS } from '~/data/media'
 
 const leaders = [
-  { name: 'Dr. Elizabeth Morgan', title: 'Chief Medical Officer', image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80', bio: 'Board-certified internist with 20+ years in healthcare leadership. Champion of patient safety initiatives.', specialty: 'Internal Medicine' },
-  { name: 'Dr. James Anderson', title: 'Chief of Surgery', image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80', bio: 'Pioneer in minimally invasive surgical techniques. Published 100+ peer-reviewed articles.', specialty: 'General Surgery' },
-  { name: 'Dr. Patricia Chen', title: 'Chief Nursing Officer', image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80', bio: 'Advocate for nursing excellence and patient-centered care models. Magnet Recognition Program leader.', specialty: 'Nursing Administration' },
-  { name: 'Dr. Robert Kim', title: 'Chief Innovation Officer', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80', bio: 'Leads digital transformation and AI integration in clinical workflows.', specialty: 'Health Informatics' },
+  { name: 'Dr. Elizabeth Adewale', title: 'Chief Medical Officer', image: PORTRAITS.women[12]!, to: undefined, bio: 'Consultant physician with two decades of clinical leadership. Leads patient safety, clinical governance and quality improvement across the hospital.', specialty: 'Internal Medicine' },
+  { name: 'Dr. Chidi Okonkwo', title: 'Chief of Surgery', image: PORTRAITS.men[8]!, to: '/surgeons/chidi-okonkwo', bio: 'Consultant surgeon specialising in minimally invasive techniques. Leads our surgical division, theatre governance and surgical training programme.', specialty: 'General Surgery' },
+  { name: 'Chiamaka Obi', title: 'Chief Nursing Officer', image: PORTRAITS.women[6]!, to: '/nurses/chiamaka-obi', bio: 'Leads nursing practice, staffing and education. A long-standing advocate for patient-centred care and clinical excellence at the bedside.', specialty: 'Nursing Administration' },
+  { name: 'Dr. Samuel Bello', title: 'Chief Innovation Officer', image: PORTRAITS.men[12]!, to: undefined, bio: 'Leads our electronic records programme, clinical informatics and the digital tools that keep care teams connected.', specialty: 'Health Informatics' },
 ]
 
 useHead({ title: 'About Us | MedCore Hospital' })

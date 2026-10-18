@@ -34,7 +34,7 @@
             <Icon name="i-lucide-door-open" class="h-6 w-6" />
           </div>
           <div>
-            <p class="text-sm text-slate-600">Operating Rooms</p>
+            <p class="text-sm text-slate-600">Operating Theatres</p>
             <p class="text-2xl font-semibold text-slate-950">2</p>
           </div>
         </div>
@@ -59,17 +59,17 @@
         <div class="mt-4 space-y-3">
           <div class="flex items-center justify-between rounded-md bg-slate-50 p-3 text-sm">
             <div>
-              <p class="font-medium text-slate-900">OR-3</p>
+              <p class="font-medium text-slate-900">Theatre 3</p>
               <p class="text-xs text-slate-500">Laparoscopic cholecystectomy</p>
             </div>
-            <span class="text-xs font-medium text-medical-800">8:00 AM</span>
+            <span class="text-xs font-medium text-medical-800">8am</span>
           </div>
           <div class="flex items-center justify-between rounded-md bg-slate-50 p-3 text-sm">
             <div>
-              <p class="font-medium text-slate-900">OR-5</p>
+              <p class="font-medium text-slate-900">Theatre 5</p>
               <p class="text-xs text-slate-500">Knee replacement</p>
             </div>
-            <span class="text-xs font-medium text-medical-800">1:00 PM</span>
+            <span class="text-xs font-medium text-medical-800">1pm</span>
           </div>
         </div>
       </div>

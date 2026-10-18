@@ -1,4 +1,5 @@
 import type { DemoDepartment } from '~/types/preview'
+import { MEDIA } from './media'
 
 /**
  * Single source of truth for every department shown across the public site.
@@ -28,15 +29,15 @@ export const PREVIEW_DEPARTMENTS: DemoDepartment[] = [
       'Asthma and allergies',
       'Fatigue and general wellness concerns',
     ],
-    image: 'https://images.pexels.com/photos/7590569/pexels-photo-7590569.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
+    image: MEDIA.bloodPressure,
   },
   {
     slug: 'pediatrics',
-    name: 'Pediatrics',
+    name: 'Paediatrics',
     group: 'Primary and family care',
     summary: 'Medical care for infants, children, and teens.',
     description:
-      'Our pediatric team cares for children from birth through adolescence in a calm, child-friendly setting, working closely with families at every stage of growth.',
+      'Our paediatric team cares for children from birth through adolescence in a calm, child-friendly setting, working closely with families at every stage of growth.',
     services: [
       'Well-child visits and growth checks',
       'Childhood immunisations',
@@ -52,11 +53,11 @@ export const PREVIEW_DEPARTMENTS: DemoDepartment[] = [
       'Nutrition and feeding questions',
     ],
     equipment: 'Age-appropriate examination rooms and dedicated paediatric monitoring equipment.',
-    image: 'https://images.pexels.com/photos/4484205/pexels-photo-4484205.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
+    image: MEDIA.paediatrics,
   },
   {
     slug: 'obstetrics-gynecology',
-    name: 'Obstetrics & Gynecology',
+    name: 'Obstetrics & Gynaecology',
     group: 'Primary and family care',
     summary: 'Reproductive and pregnancy-related care.',
     description:
@@ -76,7 +77,7 @@ export const PREVIEW_DEPARTMENTS: DemoDepartment[] = [
       'Endometriosis and fibroids',
     ],
     equipment: 'Dedicated birthing suites and obstetric ultrasound.',
-    image: 'https://images.pexels.com/photos/4386479/pexels-photo-4386479.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
+    image: MEDIA.bedsideCare,
   },
   {
     slug: 'psychiatry-psychology',
@@ -99,7 +100,7 @@ export const PREVIEW_DEPARTMENTS: DemoDepartment[] = [
       'Stress and burnout',
       'Bipolar and mood disorders',
     ],
-    image: 'https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
+    image: MEDIA.counselling,
   },
   {
     slug: 'cardiology',
@@ -123,15 +124,15 @@ export const PREVIEW_DEPARTMENTS: DemoDepartment[] = [
       'High blood pressure',
     ],
     equipment: 'Modern cardiac ultrasound, digital ECG systems and a flat-panel catheterisation laboratory.',
-    image: 'https://images.pexels.com/photos/9588163/pexels-photo-9588163.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
+    image: MEDIA.ecgMonitoring,
   },
   {
     slug: 'orthopedics',
-    name: 'Orthopedics',
+    name: 'Orthopaedics',
     group: 'Specialty care',
     summary: 'Bone, joint, and musculoskeletal care.',
     description:
-      'From sports injuries to joint replacement, our orthopedic team treats the bones, joints and muscles using minimally invasive and robotic-assisted techniques.',
+      'From sports injuries to joint replacement, our orthopaedic team treats the bones, joints and muscles using minimally invasive and robotic-assisted techniques.',
     services: [
       'Joint replacement (hip, knee, shoulder)',
       'Sports injury treatment',
@@ -147,7 +148,7 @@ export const PREVIEW_DEPARTMENTS: DemoDepartment[] = [
       'Back and neck pain',
     ],
     equipment: 'Robotic-arm joint replacement system and computer-assisted navigation.',
-    image: 'https://images.pexels.com/photos/8307103/pexels-photo-8307103.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
+    image: MEDIA.physiotherapy,
   },
   {
     slug: 'neurology',
@@ -171,7 +172,7 @@ export const PREVIEW_DEPARTMENTS: DemoDepartment[] = [
       'Headaches and migraine',
     ],
     equipment: 'High-field MRI, video-EEG telemetry and neurodiagnostic monitoring.',
-    image: 'https://images.pexels.com/photos/7573338/pexels-photo-7573338.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
+    image: MEDIA.scanReview,
   },
   {
     slug: 'dermatology',
@@ -194,7 +195,7 @@ export const PREVIEW_DEPARTMENTS: DemoDepartment[] = [
       'Skin infections',
       'Suspicious moles and lesions',
     ],
-    image: 'https://images.pexels.com/photos/4386469/pexels-photo-4386469.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
+    image: MEDIA.dermatology,
   },
   {
     slug: 'surgery',
@@ -218,7 +219,7 @@ export const PREVIEW_DEPARTMENTS: DemoDepartment[] = [
       'Selected tumours',
     ],
     equipment: 'Modern operating suites with laparoscopic towers and robotic-assisted systems.',
-    image: 'https://images.pexels.com/photos/12765566/pexels-photo-12765566.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
+    image: MEDIA.operatingTheatre,
   },
   {
     slug: 'radiology',
@@ -242,7 +243,7 @@ export const PREVIEW_DEPARTMENTS: DemoDepartment[] = [
       'Vascular assessment',
     ],
     equipment: 'Digital radiography, ultrasound, CT and MRI scanners with low-dose protocols.',
-    image: 'https://images.pexels.com/photos/4386479/pexels-photo-4386479.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
+    image: MEDIA.radiologist,
   },
   {
     slug: 'dentistry',
@@ -265,7 +266,7 @@ export const PREVIEW_DEPARTMENTS: DemoDepartment[] = [
       'Wisdom-tooth problems',
       'Dental sensitivity',
     ],
-    image: 'https://images.pexels.com/photos/7577949/pexels-photo-7577949.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
+    image: MEDIA.dentistry,
   },
   {
     slug: 'ophthalmology',
@@ -288,7 +289,7 @@ export const PREVIEW_DEPARTMENTS: DemoDepartment[] = [
       'Dry eye and infections',
       'Refractive vision problems',
     ],
-    image: 'https://images.pexels.com/photos/5243049/pexels-photo-5243049.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
+    image: MEDIA.ophthalmology,
   },
   {
     slug: 'physiotherapy',
@@ -312,7 +313,7 @@ export const PREVIEW_DEPARTMENTS: DemoDepartment[] = [
       'Reduced mobility and balance',
     ],
     equipment: 'Rehabilitation gym with specialist exercise and mobility equipment.',
-    image: 'https://images.pexels.com/photos/8293825/pexels-photo-8293825.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
+    image: MEDIA.physiotherapyAlt,
   },
   {
     slug: 'emergency-medicine',
@@ -336,7 +337,7 @@ export const PREVIEW_DEPARTMENTS: DemoDepartment[] = [
       'Severe infections',
     ],
     equipment: 'Resuscitation bays, emergency imaging transfer and dedicated ambulance access.',
-    image: 'https://images.pexels.com/photos/4386783/pexels-photo-4386783.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
+    image: MEDIA.paramedics,
   },
 ]
 

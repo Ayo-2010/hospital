@@ -3,6 +3,7 @@
   <HomeQuickActions :base-path="basePath" />
   <HomeDepartments />
   <HomeDoctors :base-path="basePath" />
+  <HomeGallery />
   <HomeServices />
   <HomeAssurance />
   <HomeCta :base-path="basePath" />
@@ -18,6 +19,7 @@ import HomeHero from './HomeHero.vue'
 import HomeQuickActions from './HomeQuickActions.vue'
 import HomeDepartments from './HomeDepartments.vue'
 import HomeDoctors from './HomeDoctors.vue'
+import HomeGallery from './HomeGallery.vue'
 import HomeServices from './HomeServices.vue'
 import HomeAssurance from './HomeAssurance.vue'
 import HomeCta from './HomeCta.vue'

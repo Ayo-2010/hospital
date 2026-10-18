@@ -59,17 +59,17 @@
         <div class="mt-4 space-y-3">
           <div class="flex items-center justify-between rounded-md bg-slate-50 p-3 text-sm">
             <div>
-              <p class="font-medium text-slate-900">OR-3</p>
+              <p class="font-medium text-slate-900">Theatre 3</p>
               <p class="text-xs text-slate-500">Laparoscopic cholecystectomy</p>
             </div>
-            <span class="text-xs font-medium text-medical-800">8:00 AM</span>
+            <span class="text-xs font-medium text-medical-800">8am</span>
           </div>
           <div class="flex items-center justify-between rounded-md bg-slate-50 p-3 text-sm">
             <div>
-              <p class="font-medium text-slate-900">OR-5</p>
+              <p class="font-medium text-slate-900">Theatre 5</p>
               <p class="text-xs text-slate-500">Knee replacement</p>
             </div>
-            <span class="text-xs font-medium text-medical-800">1:00 PM</span>
+            <span class="text-xs font-medium text-medical-800">1pm</span>
           </div>
         </div>
       </div>
@@ -85,7 +85,7 @@
             Patients
           </NuxtLink>
           <NuxtLink to="/surgery/operating-rooms" class="rounded-md border border-slate-200 p-3 text-center text-sm font-medium text-slate-700 hover:bg-medical-50 hover:text-medical-800">
-            Operating Rooms
+            Operating Theatres
           </NuxtLink>
           <NuxtLink to="/surgery/cases" class="rounded-md border border-slate-200 p-3 text-center text-sm font-medium text-slate-700 hover:bg-medical-50 hover:text-medical-800">
             Cases

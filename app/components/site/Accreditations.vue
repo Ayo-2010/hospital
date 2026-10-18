@@ -7,7 +7,7 @@
           Accreditations &amp; Certifications
         </h2>
         <p class="mt-4 text-base leading-7 text-slate-600">
-          Recognized for meeting the highest national standards in healthcare quality and patient safety.
+          Recognised for meeting the highest national and international standards in healthcare quality and patient safety.
         </p>
       </div>
 
@@ -30,9 +30,9 @@ import AccreditationCard from './AccreditationCard.vue'
 
 const accreditations = [
   { name: 'Joint Commission International', description: 'Gold Seal of Approval', icon: 'i-lucide-award', year: '2024' },
-  { name: 'Magnet Recognition', description: 'Nursing Excellence', icon: 'i-lucide-medal', year: '2023' },
-  { name: 'CMS 5-Star Rating', description: 'Overall Hospital Quality', icon: 'i-lucide-star', year: '2024' },
-  { name: 'Leapfrog Grade A', description: 'Patient Safety', icon: 'i-lucide-shield-check', year: '2024' },
-  { name: 'NDPR Compliant', description: 'Privacy & Security', icon: 'i-lucide-lock', year: '2024' },
+  { name: 'MDCN registered', description: 'Licensed practitioners', icon: 'i-lucide-medal', year: '2023' },
+  { name: 'ISO 9001:2015', description: 'Quality management', icon: 'i-lucide-star', year: '2024' },
+  { name: 'COHSASA accredited', description: 'Patient safety', icon: 'i-lucide-shield-check', year: '2024' },
+  { name: 'NDPR compliant', description: 'Privacy & security', icon: 'i-lucide-lock', year: '2024' },
 ]
 </script>

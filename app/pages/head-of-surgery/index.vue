@@ -34,7 +34,7 @@
             <Icon name="i-lucide-door-open" class="h-6 w-6" />
           </div>
           <div>
-            <p class="text-sm text-slate-600">Operating Rooms</p>
+            <p class="text-sm text-slate-600">Operating Theatres</p>
             <p class="text-2xl font-semibold text-slate-950">6</p>
           </div>
         </div>
@@ -60,7 +60,7 @@
           <div class="flex items-center justify-between rounded-md bg-slate-50 p-3 text-sm">
             <div>
               <p class="font-medium text-slate-900">Complex spine surgery</p>
-              <p class="text-xs text-slate-500">Dr. Robert Kim</p>
+              <p class="text-xs text-slate-500">Dr. Ifeanyi Okeke</p>
             </div>
             <span class="text-xs font-medium text-warm-800">Pending review</span>
           </div>

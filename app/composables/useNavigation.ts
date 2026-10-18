@@ -1,5 +1,5 @@
 export const PHARMACY_NAV = [
-  { label: 'Dashboard', to: '/pharmacy', icon: 'i-lucide-layout-dashboard' },
+  { label: 'Dashboard', to: '/dashboard/pharmacy', icon: 'i-lucide-layout-dashboard' },
   { label: 'Prescriptions', to: '/pharmacy/prescriptions', icon: 'i-lucide-file-text' },
   { label: 'Dispensing', to: '/pharmacy/dispensing', icon: 'i-lucide-pill' },
   { label: 'Inventory', to: '/pharmacy/inventory', icon: 'i-lucide-package' },
@@ -9,7 +9,7 @@ export const PHARMACY_NAV = [
 ]
 
 export const LABORATORY_NAV = [
-  { label: 'Dashboard', to: '/laboratory', icon: 'i-lucide-flask-conical' },
+  { label: 'Dashboard', to: '/dashboard/laboratory', icon: 'i-lucide-flask-conical' },
   { label: 'Orders', to: '/laboratory/orders', icon: 'i-lucide-clipboard-list' },
   { label: 'Samples', to: '/laboratory/samples', icon: 'i-lucide-test-tube' },
   { label: 'Results', to: '/laboratory/results', icon: 'i-lucide-file-check' },
@@ -19,7 +19,7 @@ export const LABORATORY_NAV = [
 ]
 
 export const RADIOLOGY_NAV = [
-  { label: 'Dashboard', to: '/radiology', icon: 'i-lucide-layout-dashboard' },
+  { label: 'Dashboard', to: '/dashboard/radiology', icon: 'i-lucide-layout-dashboard' },
   { label: 'Orders', to: '/radiology/orders', icon: 'i-lucide-clipboard-list' },
   { label: 'Schedule', to: '/radiology/schedule', icon: 'i-lucide-calendar' },
   { label: 'Reports', to: '/radiology/reports', icon: 'i-lucide-file-text' },
@@ -33,7 +33,7 @@ export const NURSE_NAV = [
   { label: 'Wards', to: '/nurse/wards', icon: 'i-lucide-bed' },
   { label: 'Vital Signs', to: '/nurse/vitals', icon: 'i-lucide-activity' },
   { label: 'Nursing Notes', to: '/nurse/notes', icon: 'i-lucide-file-text' },
-  { label: 'Medications', to: '/nurse/medications', icon: 'i-lucide-pill' },
+  { label: 'Medicines', to: '/nurse/medications', icon: 'i-lucide-pill' },
   { label: 'Tasks', to: '/nurse/tasks', icon: 'i-lucide-square-check' },
   { label: 'Admissions', to: '/nurse/admissions', icon: 'i-lucide-log-in' },
   { label: 'Discharges', to: '/nurse/discharges', icon: 'i-lucide-log-out' },
@@ -89,16 +89,16 @@ export const MANAGEMENT_NAV = [
 ]
 
 export const SURGERY_NAV = [
-  { label: 'Dashboard', to: '/surgery', icon: 'i-lucide-layout-dashboard' },
+  { label: 'Dashboard', to: '/dashboard/surgery', icon: 'i-lucide-layout-dashboard' },
   { label: 'Surgery Schedule', to: '/surgery/schedule', icon: 'i-lucide-calendar' },
   { label: 'Patients', to: '/surgery/patients', icon: 'i-lucide-users' },
-  { label: 'Operating Rooms', to: '/surgery/operating-rooms', icon: 'i-lucide-door-open' },
+  { label: 'Operating Theatres', to: '/surgery/operating-rooms', icon: 'i-lucide-door-open' },
   { label: 'Surgical Cases', to: '/surgery/cases', icon: 'i-lucide-clipboard-list' },
   { label: 'Pre-Op', to: '/surgery/pre-op', icon: 'i-lucide-file-check' },
   { label: 'Intra-Op', to: '/surgery/intra-op', icon: 'i-lucide-activity' },
   { label: 'Post-Op', to: '/surgery/post-op', icon: 'i-lucide-file-text' },
   { label: 'Surgeons', to: '/surgery/surgeons', icon: 'i-lucide-user' },
-  { label: 'Anesthesia', to: '/surgery/anesthesia', icon: 'i-lucide-wind' },
+  { label: 'Anaesthesia', to: '/surgery/anesthesia', icon: 'i-lucide-wind' },
   { label: 'Reports', to: '/surgery/reports', icon: 'i-lucide-bar-chart-3' },
   { label: 'Equipment', to: '/surgery/equipment', icon: 'i-lucide-monitor' },
   { label: 'Inventory', to: '/surgery/inventory', icon: 'i-lucide-package' },
@@ -110,9 +110,9 @@ export const HEAD_OF_SURGERY_NAV = [
   { label: 'Surgical Cases', to: '/head-of-surgery/cases', icon: 'i-lucide-clipboard-list' },
   { label: 'Approvals', to: '/head-of-surgery/approvals', icon: 'i-lucide-circle-check' },
   { label: 'Schedule', to: '/head-of-surgery/schedule', icon: 'i-lucide-calendar' },
-  { label: 'Operating Rooms', to: '/head-of-surgery/operating-rooms', icon: 'i-lucide-door-open' },
+  { label: 'Operating Theatres', to: '/head-of-surgery/operating-rooms', icon: 'i-lucide-door-open' },
   { label: 'Surgeons', to: '/head-of-surgery/surgeons', icon: 'i-lucide-users' },
-  { label: 'Anesthesia', to: '/head-of-surgery/anesthesia', icon: 'i-lucide-wind' },
+  { label: 'Anaesthesia', to: '/head-of-surgery/anesthesia', icon: 'i-lucide-wind' },
   { label: 'Outcomes', to: '/head-of-surgery/outcomes', icon: 'i-lucide-trending-up' },
   { label: 'Reports', to: '/head-of-surgery/reports', icon: 'i-lucide-bar-chart-3' },
   { label: 'Analytics', to: '/head-of-surgery/analytics', icon: 'i-lucide-pie-chart' },
@@ -158,7 +158,7 @@ export const SURGEON_NAV = [
   { label: 'My Patients', to: '/surgeon/patients', icon: 'i-lucide-users' },
   { label: 'Surgical Cases', to: '/surgeon/cases', icon: 'i-lucide-clipboard-list' },
   { label: 'Schedule', to: '/surgeon/schedule', icon: 'i-lucide-calendar' },
-  { label: 'Operating Rooms', to: '/surgeon/operating-rooms', icon: 'i-lucide-door-open' },
+  { label: 'Operating Theatres', to: '/surgeon/operating-rooms', icon: 'i-lucide-door-open' },
   { label: 'Reports', to: '/surgeon/reports', icon: 'i-lucide-bar-chart-3' },
   { label: 'Profile', to: '/surgeon/profile', icon: 'i-lucide-user' },
 ]
@@ -177,8 +177,86 @@ export function getNavForRole(role: string) {
     ACCOUNTANT: BILLING_NAV,
     HOSPITAL_ADMIN: ADMIN_NAV,
     MANAGEMENT: MANAGEMENT_NAV,
+    SURGERY: SURGERY_NAV,
     SUPER_ADMIN: ADMIN_NAV,
   }
 
   return map[role] || []
+}
+
+/**
+ * The first path segment of a workspace route mapped to the role that owns it.
+ *
+ * The sidebar previously derived the role straight from the URL, which broke
+ * for workspaces whose name is not the role name (for example
+ * `/head-of-surgery` -> HEAD_OF_SURGERY) and for the staff dashboards that live
+ * under `/dashboard/*` so they do not collide with the public information
+ * pages of the same name.
+ */
+export const ROLE_BY_SEGMENT: Record<string, string> = {
+  patient: 'PATIENT',
+  doctor: 'DOCTOR',
+  nurse: 'NURSE',
+  surgeon: 'SURGEON',
+  'head-of-surgery': 'HEAD_OF_SURGERY',
+  reception: 'RECEPTIONIST',
+  billing: 'ACCOUNTANT',
+  admin: 'HOSPITAL_ADMIN',
+  management: 'MANAGEMENT',
+  laboratory: 'LAB_TECHNICIAN',
+  radiology: 'RADIOLOGIST',
+  pharmacy: 'PHARMACIST',
+  surgery: 'SURGERY',
+}
+
+/** Human-readable name for each staff workspace, used in breadcrumbs. */
+export const WORKSPACE_LABELS: Record<string, string> = {
+  patient: 'Patient portal',
+  doctor: 'Doctor workspace',
+  nurse: 'Nursing workspace',
+  surgeon: 'Surgeon workspace',
+  'head-of-surgery': 'Head of surgery workspace',
+  reception: 'Reception',
+  billing: 'Billing',
+  admin: 'Administration',
+  management: 'Management',
+  laboratory: 'Laboratory',
+  radiology: 'Radiology',
+  pharmacy: 'Pharmacy',
+  surgery: 'Surgery',
+}
+
+/** Resolve the workspace key from a route path, e.g. `/lab/orders` -> `laboratory`. */
+export function workspaceKeyFromPath(path: string) {
+  const segments = path.split('/').filter(Boolean)
+  if (segments[0] === 'dashboard' && segments[1]) return segments[1]
+  return segments[0] ?? ''
+}
+
+/** Nav items for the workspace that owns a route path. */
+export function getNavForPath(path: string) {
+  const key = workspaceKeyFromPath(path)
+  return getNavForRole(ROLE_BY_SEGMENT[key] ?? '')
+}
+
+/** Every nav item across every workspace, keyed by its route path. */
+export function findNavItem(path: string) {
+  const all = [
+    ...PHARMACY_NAV,
+    ...LABORATORY_NAV,
+    ...RADIOLOGY_NAV,
+    ...NURSE_NAV,
+    ...BILLING_NAV,
+    ...RECEPTION_NAV,
+    ...ADMIN_NAV,
+    ...MANAGEMENT_NAV,
+    ...SURGERY_NAV,
+    ...HEAD_OF_SURGERY_NAV,
+    ...DOCTOR_NAV,
+    ...PATIENT_NAV,
+    ...SURGEON_NAV,
+  ]
+
+  const normalised = path.length > 1 ? path.replace(/\/+$/, '') : path
+  return all.find(item => item.to === normalised)
 }

@@ -17,7 +17,7 @@
           </span>
           <span class="flex items-center gap-1.5">
             <Icon name="i-lucide-clock" class="h-4 w-4 text-slate-400" aria-hidden="true" />
-            {{ job.type === 'full-time' ? 'Full-Time' : job.type === 'part-time' ? 'Part-Time' : 'Per Diem' }}
+            {{ job.type === 'full-time' ? 'Full-time' : job.type === 'part-time' ? 'Part-time' : 'Locum' }}
           </span>
           <span class="flex items-center gap-1.5">
             <Icon name="i-lucide-sun-moon" class="h-4 w-4 text-slate-400" aria-hidden="true" />
@@ -31,7 +31,7 @@
           <p class="text-sm font-semibold text-slate-900">{{ formatDate(job.posted) }}</p>
         </div>
         <button type="button" class="btn-primary btn-sm">
-          Apply Now
+          Apply now
           <Icon name="i-lucide-arrow-right" class="h-4 w-4" aria-hidden="true" />
         </button>
       </div>
@@ -49,7 +49,7 @@ defineProps<{
     title: string
     department: string
     location: string
-    type: 'full-time' | 'part-time' | 'per-diem'
+    type: 'full-time' | 'part-time' | 'locum'
     shift: string
     experience: string
     posted: string
@@ -58,6 +58,6 @@ defineProps<{
 }>()
 
 const formatDate = (dateStr: string) => {
-  return new Date(dateStr).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+  return new Date(dateStr).toLocaleDateString('en-GB', { month: 'short', day: 'numeric', year: 'numeric' })
 }
 </script>

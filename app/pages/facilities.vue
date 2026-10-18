@@ -42,10 +42,10 @@
         <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
           <div>
             <p class="eyebrow text-emergency-700">Emergency Care</p>
-            <h2 class="mt-3">Level 1 Trauma Center</h2>
+            <h2 class="mt-3">24/7 Emergency &amp; Trauma Care</h2>
             <p class="mt-4 text-base leading-7 text-slate-600">
-              Our emergency department operates 24/7 with board-certified emergency physicians,
-              trauma surgeons, and critical care nurses ready to respond to any medical emergency.
+              Our emergency department operates 24 hours a day with emergency doctors,
+              trauma surgeons and critical care nurses ready to respond to any medical emergency.
             </p>
             <div class="mt-6 flex flex-wrap gap-3">
               <span class="inline-flex items-center gap-2 rounded-full bg-emergency-50 px-4 py-2 text-sm font-medium text-emergency-800">
@@ -65,8 +65,8 @@
 
           <div class="relative">
             <img
-              src="https://images.pexels.com/photos/4386783/pexels-photo-4386783.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80"
-              alt="Emergency department entrance"
+              :src="MEDIA.emergencyEntrance"
+              alt="Emergency department sign at the hospital entrance"
               class="h-72 w-full rounded-xl border border-slate-200 object-cover sm:h-96"
               loading="lazy"
             />
@@ -116,31 +116,32 @@
 
 <script setup lang="ts">
 import FacilityCard from '~/components/site/FacilityCard.vue'
+import { MEDIA } from '~/data/media'
 
 const facilities = [
   {
-    id: 'main-campus',
-    slug: 'main-campus',
-    name: 'Main Hospital Campus',
-    description: 'Our flagship 450-bed facility featuring advanced surgical suites, comprehensive emergency department, ICU, and specialized care units across all major specialties.',
-    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80',
-    features: ['450 Beds', '12 OR Suites', 'Level 1 Trauma', 'ICU', 'Imaging Center'],
+    id: 'victoria-island',
+    slug: 'victoria-island',
+    name: 'Victoria Island Campus',
+    description: 'Our flagship 450-bed facility, with advanced surgical suites, a 24-hour emergency department, intensive care and specialist units across all major specialties.',
+    image: MEDIA.wayfinding,
+    features: ['450 Beds', '12 Operating Theatres', '24/7 Emergency', 'ICU', 'Imaging Centre'],
   },
   {
-    id: 'medical-office-building',
-    slug: 'medical-office-building',
+    id: 'ikoyi-specialist-centre',
+    slug: 'ikoyi-specialist-centre',
     name: 'Ikoyi Specialist Centre',
-    description: 'Outpatient specialty clinics, diagnostic imaging, laboratory services, and physician offices in a convenient, patient-friendly setting.',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
-    features: ['30+ Clinics', 'Imaging Center', 'Lab Services', 'Pharmacy'],
+    description: 'Outpatient specialty clinics, diagnostic imaging, laboratory services and consulting rooms in a convenient, patient-friendly setting.',
+    image: MEDIA.consultationRoom,
+    features: ['30+ Clinics', 'Imaging Centre', 'Laboratory', 'Pharmacy'],
   },
   {
     id: 'wellness-rehab',
     slug: 'wellness-rehab',
-    name: 'Wellness & Rehab Center',
-    description: 'Comprehensive physical therapy, occupational therapy, cardiac rehabilitation, and wellness programs in a modern facility.',
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80',
-    features: ['PT/OT Gym', 'Cardiac Rehab', 'Pool Therapy', 'Fitness Center'],
+    name: 'Wellness & Rehabilitation Centre',
+    description: 'Physiotherapy, occupational therapy, cardiac rehabilitation and wellness programmes in a purpose-built facility.',
+    image: MEDIA.physiotherapy,
+    features: ['Physiotherapy Gym', 'Cardiac Rehab', 'Hydrotherapy', 'Fitness Suite'],
   },
 ]
 
@@ -148,28 +149,28 @@ const amenities = [
   {
     id: 'pharmacy',
     name: 'On-Site Pharmacy',
-    description: 'Prescription filling, medication counseling, and delivery service available within a 10-mile radius.',
+    description: 'Prescription filling, medication counselling and delivery within Victoria Island and Ikoyi.',
     icon: 'i-lucide-pill',
     link: '/pharmacy',
   },
   {
     id: 'laboratory',
     name: 'Laboratory Services',
-    description: 'Blood tests, imaging, pathology, and cardiac markers with fast turnaround and secure digital results.',
+    description: 'Blood tests, pathology and cardiac markers with fast turnaround and secure digital results.',
     icon: 'i-lucide-flask-conical',
     link: '/laboratory',
   },
   {
     id: 'radiology',
-    name: 'Imaging Center',
-    description: 'X-rays, ultrasounds, CT scans, and MRI with digital reporting and board-certified radiologists.',
+    name: 'Imaging Centre',
+    description: 'X-ray, ultrasound, CT and MRI with digital reporting by consultant radiologists.',
     icon: 'i-lucide-scan',
     link: '/radiology',
   },
   {
     id: 'surgery',
     name: 'Surgical Suites',
-    description: '12 advanced operating rooms equipped with da Vinci robotic system and minimally invasive technology.',
+    description: 'Twelve operating theatres with laparoscopic and minimally invasive equipment.',
     icon: 'i-lucide-scissors',
     link: '/surgery',
   },

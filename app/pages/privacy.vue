@@ -27,7 +27,7 @@
         <ul>
           <li>Personal details (name, address, phone, email)</li>
           <li>Medical history and treatment information</li>
-          <li>Payment and insurance information</li>
+          <li>Payment and HMO information</li>
           <li>Communications with our staff</li>
         </ul>
 
@@ -36,7 +36,7 @@
         <ul>
           <li>Provide and coordinate your healthcare services</li>
           <li>Communicate with you about your care and appointments</li>
-          <li>Billing and insurance processing</li>
+          <li>Billing and HMO processing</li>
           <li>Improve our services and quality of care</li>
         </ul>
 

@@ -262,18 +262,18 @@ const minDate = new Date().toISOString().slice(0, 10)
 const departments = [
   { label: 'General Medicine', value: 'general-medicine' },
   { label: 'Cardiology', value: 'cardiology' },
-  { label: 'Orthopedics', value: 'orthopedics' },
-  { label: 'Pediatrics', value: 'pediatrics' },
+  { label: 'Orthopaedics', value: 'orthopedics' },
+  { label: 'Paediatrics', value: 'pediatrics' },
   { label: 'Neurology', value: 'neurology' },
   { label: 'Psychiatry & Psychology', value: 'psychiatry-psychology' },
 ]
 
 const allDoctors = [
-  { label: 'Dr. Sarah Johnson — Cardiology', value: 'sarah-johnson', dept: 'cardiology' },
-  { label: 'Dr. Michael Chen — Neurology', value: 'michael-chen', dept: 'neurology' },
-  { label: 'Dr. Emily Davis — Pediatrics', value: 'emily-davis', dept: 'pediatrics' },
-  { label: 'Dr. James Wilson — General Medicine', value: 'james-wilson', dept: 'general-medicine' },
-  { label: 'Dr. Lisa Anderson — Orthopedics', value: 'lisa-anderson', dept: 'orthopedics' },
+  { label: 'Dr. Adaeze Nwosu — Cardiology', value: 'adaeze-nwosu', dept: 'cardiology' },
+  { label: 'Dr. Emeka Nwankwo — Neurology', value: 'emeka-nwankwo', dept: 'neurology' },
+  { label: 'Dr. Fatima Yusuf — Paediatrics', value: 'fatima-yusuf', dept: 'pediatrics' },
+  { label: 'Dr. Ikechukwu Eze — General Medicine', value: 'ikechukwu-eze', dept: 'general-medicine' },
+  { label: 'Dr. Chinedu Obiora — Orthopaedics', value: 'chinedu-obiora', dept: 'orthopedics' },
 ]
 
 const visibleDoctors = computed(() => {

@@ -86,7 +86,7 @@
             <p class="text-sm leading-5 text-emergency-900">
               <strong class="font-semibold">Medical emergency?</strong> Call
               <a href="tel:112" class="font-semibold underline underline-offset-2">112</a> or
-              <NuxtLink to="/emergency" class="font-semibold underline underline-offset-2">go to the ER</NuxtLink>.
+              <NuxtLink to="/emergency" class="font-semibold underline underline-offset-2">go to the emergency department</NuxtLink>.
             </p>
           </div>
 
@@ -101,7 +101,7 @@
               </div>
               <div>
                 <dt class="text-slate-500">Hours</dt>
-                <dd class="mt-0.5 font-medium text-slate-900">Mon – Fri, 8:00 AM – 6:00 PM</dd>
+                <dd class="mt-0.5 font-medium text-slate-900">Mon – Fri, 8am – 6pm</dd>
               </div>
             </dl>
             <p class="mt-3 border-t border-slate-100 pt-3 text-xs leading-5 text-slate-500">

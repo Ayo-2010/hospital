@@ -78,7 +78,7 @@
         <div class="mt-4 space-y-3">
           <div class="flex items-center gap-3 text-sm text-slate-600">
             <Icon name="i-lucide-square-check" class="h-4 w-4 text-medical-700" />
-            <span>Administer morning medications</span>
+            <span>Administer morning medicines</span>
           </div>
           <div class="flex items-center gap-3 text-sm text-slate-600">
             <Icon name="i-lucide-activity" class="h-4 w-4 text-medical-700" />

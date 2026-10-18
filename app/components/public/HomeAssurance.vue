@@ -65,7 +65,7 @@ const stats = [
 const accreditations = [
   { label: 'JCI accredited', detail: 'Accredited hospital', icon: 'i-lucide-award' },
   { label: 'NDPR compliant', detail: 'Protected health data', icon: 'i-lucide-shield-check' },
-  { label: 'Magnet® recognized', detail: 'Nursing excellence', icon: 'i-lucide-medal' },
-  { label: 'Most insurance accepted', detail: 'Transparent billing', icon: 'i-lucide-credit-card' },
+  { label: 'MDCN registered', detail: 'Licensed practitioners', icon: 'i-lucide-medal' },
+  { label: 'Most HMOs accepted', detail: 'Transparent billing', icon: 'i-lucide-credit-card' },
 ]
 </script>

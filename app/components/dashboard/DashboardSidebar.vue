@@ -29,10 +29,7 @@
 <script setup lang="ts">
 const appName = useRuntimeConfig().public.appName
 const route = useRoute()
-const items = computed(() => {
-  const role = route.path.split('/')[1] ?? ''
-  return getNavForRole(role.toUpperCase())
-})
+const items = computed(() => getNavForPath(route.path))
 
 function isActive(to: string) {
   return route.path === to || (to !== '/' && route.path.startsWith(to))

@@ -46,8 +46,8 @@
               <Icon name="i-lucide-award" class="h-5 w-5" aria-hidden="true" />
             </span>
             <div>
-              <p class="font-display text-xl font-semibold text-slate-950">Level 1</p>
-              <p class="text-xs text-slate-500">Trauma Center</p>
+              <p class="font-display text-xl font-semibold text-slate-950">24/7</p>
+              <p class="text-xs text-slate-500">Emergency Care</p>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@
       <div class="animate-fade-in animate-scale-in lg:justify-self-end">
         <figure class="m-0 overflow-hidden rounded-xl border border-slate-200 bg-slate-100 shadow-soft">
           <img
-            src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=compress&cs=tinysrgb&w=1600&q=80"
+            :src="MEDIA.clinicalTeam"
             alt="Modern hospital exterior with glass facade and greenery"
             class="h-[280px] w-full object-cover sm:h-[420px]"
             width="1100"
@@ -71,5 +71,6 @@
 </template>
 
 <script setup lang="ts">
+import { MEDIA } from '~/data/media'
 // About hero — a calm, image-forward introduction to the hospital.
 </script>

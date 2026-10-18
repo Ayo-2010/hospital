@@ -39,7 +39,7 @@
 <script setup lang="ts">
 const assurances = [
   'Same-day appointments available',
-  'Most insurance accepted',
+  'Most HMOs accepted',
   'Convenient location with parking',
 ]
 </script>

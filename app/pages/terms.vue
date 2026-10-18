@@ -38,7 +38,7 @@
         <p>Our site may contain links to third-party services. We are not responsible for the content or practices of these services.</p>
 
         <h2>Limitation of Liability</h2>
-        <p>We strive for accuracy but do not warrant completeness. Always consult a qualified healthcare provider.</p>
+        <p>We strive for accuracy but do not warrant completeness. Always consult a qualified clinician.</p>
       </div>
     </div>
   </div>

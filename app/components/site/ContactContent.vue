@@ -175,6 +175,7 @@ import { reactive, ref } from 'vue'
 import { useToast } from '#ui/composables/useToast'
 import ContactInfoCard from './ContactInfoCard.vue'
 import LocationCard from './LocationCard.vue'
+import { MEDIA } from '~/data/media'
 
 const toast = useToast()
 const loading = ref(false)
@@ -237,37 +238,37 @@ const contactInfo: {
     links: [
       { label: 'Emergency Dept: 0704 503 3528', href: 'tel:+2347045033528' },
       { label: 'Ambulance: 112', href: 'tel:112' },
-      { label: 'ER Directions', href: '/emergency' },
+      { label: 'Emergency directions', href: '/emergency' },
     ],
   },
 ]
 
 const locations = [
   {
-    name: 'Main Hospital Campus',
+    name: 'Victoria Island Campus',
     address: '12 Adeola Odeku Street\nVictoria Island, Lagos 101241',
     phone: '0704 503 3528',
-    hours: 'Open 24/7 (Emergency)\nMon-Fri: 6 AM - 8 PM (Main Entrance)',
-    services: ['Emergency', 'Inpatient', 'Surgery', 'ICU', 'Imaging'],
-    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80',
+    hours: 'Open 24/7 (Emergency)\nMon–Fri: 6am - 8pm (Main Entrance)',
+    services: ['Emergency', 'Inpatient', 'Surgery', 'ICU', 'Imaging', 'Pharmacy'],
+    image: MEDIA.wayfinding,
     isMain: true,
   },
   {
     name: 'Ikoyi Specialist Centre',
-    address: '450 Health Plaza, Suite 200\nVictoria Island, Lagos 101241',
-    phone: '0704 503 3530',
-    hours: 'Mon-Fri: 8 AM - 6 PM\nSat: 8 AM - 12 PM',
-    services: ['Outpatient Clinics', 'Imaging', 'Lab', 'Pharmacy'],
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80',
+    address: '24 Bourdillon Road, Suite 200\nIkoyi, Lagos 106104',
+    phone: '0704 503 3529',
+    hours: 'Mon–Fri: 8am - 6pm\nSat: 8am - 12pm',
+    services: ['Outpatient Clinics', 'Imaging', 'Laboratory', 'Pharmacy'],
+    image: MEDIA.consultationRoom,
     isMain: false,
   },
   {
-    name: 'Wellness & Rehab Center',
-    address: '789 Wellness Way\nVictoria Island, Lagos 101241',
-    phone: '0704 503 3531',
-    hours: 'Mon-Fri: 7 AM - 7 PM\nSat: 8 AM - 2 PM',
-    services: ['Physical Therapy', 'Cardiac Rehab', 'Fitness', 'Pool'],
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
+    name: 'Wellness & Rehabilitation Centre',
+    address: '8 Musa Yar\'Adua Street\nVictoria Island, Lagos 101241',
+    phone: '0704 503 3530',
+    hours: 'Mon–Fri: 7am - 7pm\nSat: 8am - 2pm',
+    services: ['Physiotherapy', 'Cardiac Rehab', 'Fitness', 'Hydrotherapy'],
+    image: MEDIA.physiotherapy,
     isMain: false,
   },
 ]

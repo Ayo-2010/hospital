@@ -17,18 +17,20 @@
 
       <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         <article
-          v-for="(doctor, index) in doctors"
+          v-for="doctor in doctors"
           :key="doctor.id"
           class="flex flex-col rounded-xl border border-slate-200 bg-white p-6 transition-shadow hover:shadow-card"
         >
           <div class="flex items-center gap-4">
-            <span
-              class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full font-display text-lg font-bold"
-              :class="tones[index % tones.length]"
-              aria-hidden="true"
+            <img
+              :src="doctor.image"
+              :alt="doctor.name"
+              class="h-16 w-16 shrink-0 rounded-full border border-slate-200 object-cover"
+              width="64"
+              height="64"
+              loading="lazy"
+              decoding="async"
             >
-              {{ initials(doctor.name) }}
-            </span>
             <div class="min-w-0">
               <h3 class="truncate font-display text-lg font-semibold text-slate-950">{{ doctor.name }}</h3>
               <p class="text-sm font-medium text-medical-800">{{ doctor.specialty }}</p>
@@ -54,7 +56,7 @@
           </dl>
 
           <div class="mt-6 flex items-center gap-3 border-t border-slate-100 pt-5">
-            <NuxtLink :to="`/doctors/${doctor.slug}`" class="btn-secondary btn-sm flex-1">
+            <NuxtLink :to="`${basePath}/doctors/${doctor.slug}`" class="btn-secondary btn-sm flex-1">
               View profile
             </NuxtLink>
             <NuxtLink :to="`${basePath}/appointments/book`" class="btn-primary btn-sm flex-1">
@@ -66,7 +68,7 @@
 
       <p class="mt-5 flex items-start gap-2 text-xs leading-5 text-slate-500">
         <Icon name="i-lucide-info" class="mt-0.5 h-3.5 w-3.5 shrink-0 text-medical-700" aria-hidden="true" />
-        Clinician profiles shown here are fictional demonstration records, not verified provider listings.
+        Clinician profiles shown here are fictional demonstration records, not verified clinician listings.
       </p>
     </div>
   </section>
@@ -78,20 +80,5 @@ import { PREVIEW_DOCTORS } from '~/data/previewDoctors'
 const props = withDefaults(defineProps<{ basePath?: string }>(), { basePath: '' })
 const basePath = computed(() => props.basePath)
 
-const doctors = computed(() => PREVIEW_DOCTORS.slice(0, 3))
-
-const tones = [
-  'bg-medical-50 text-medical-800',
-  'bg-healing-50 text-healing-800',
-  'bg-slate-100 text-slate-700',
-]
-
-function initials(name: string) {
-  return name
-    .replace(/^Dr\.?\s+/i, '')
-    .split(/\s+/)
-    .slice(0, 2)
-    .map(part => part.charAt(0).toUpperCase())
-    .join('')
-}
+const doctors = computed(() => PREVIEW_DOCTORS.slice(0, 6))
 </script>

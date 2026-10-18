@@ -58,14 +58,14 @@
           <div class="flex items-start gap-3 rounded-md border border-emergency-200 bg-emergency-50 px-4 py-3.5">
             <Icon name="i-lucide-circle-alert" class="mt-0.5 h-5 w-5 text-emergency-700" />
             <p class="text-sm leading-5 text-emergency-900">
-              <strong class="font-semibold">Medical emergency?</strong> Call 112 or visit the ER.
+              <strong class="font-semibold">Medical emergency?</strong> Call 112 or visit the emergency department.
             </p>
           </div>
           <div class="rounded-lg border border-slate-200 bg-white p-5">
             <h2 class="font-display text-lg font-semibold text-slate-950">Lab hours</h2>
             <div class="mt-3 space-y-2 text-sm">
-              <div class="flex justify-between"><span class="text-slate-600">Monday – Friday</span><span class="text-slate-900">7:00 AM – 7:00 PM</span></div>
-              <div class="flex justify-between"><span class="text-slate-600">Saturday</span><span class="text-slate-900">8:00 AM – 3:00 PM</span></div>
+              <div class="flex justify-between"><span class="text-slate-600">Monday – Friday</span><span class="text-slate-900">7am – 7pm</span></div>
+              <div class="flex justify-between"><span class="text-slate-600">Saturday</span><span class="text-slate-900">8am – 3pm</span></div>
               <div class="flex justify-between"><span class="text-slate-600">Sunday</span><span class="text-slate-600">Closed</span></div>
             </div>
           </div>
@@ -74,16 +74,16 @@
 
       <div class="mt-12 grid gap-6 lg:grid-cols-3">
         <figure class="m-0">
-          <img class="aspect-video w-full rounded-lg border border-slate-200 bg-slate-100 object-cover object-center" src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Medical team in discussion" width="400" height="250" loading="lazy" decoding="async" />
-          <figcaption class="mt-1.5 text-xs text-slate-500">Team collaboration — photo by Christina M on Pexels.</figcaption>
+          <img class="aspect-video w-full rounded-lg border border-slate-200 bg-slate-100 object-cover object-center" :src="MEDIA.clinicalTeam" alt="Group of doctors and nurses" width="400" height="250" loading="lazy" decoding="async" />
+          <figcaption class="mt-1.5 text-xs text-slate-500">Team collaboration</figcaption>
         </figure>
         <figure class="m-0">
-          <img class="aspect-video w-full rounded-lg border border-slate-200 bg-slate-100 object-cover object-center" src="https://images.pexels.com/photos/5325833/pexels-photo-5325833.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Doctor examining a patient" width="400" height="250" loading="lazy" decoding="async" />
-          <figcaption class="mt-1.5 text-xs text-slate-500">Physician consultation — photo by Karolina Grabowska on Pexels.</figcaption>
+          <img class="aspect-video w-full rounded-lg border border-slate-200 bg-slate-100 object-cover object-center" :src="MEDIA.bedsideCare" alt="Nurse checking on a patient in bed" width="400" height="250" loading="lazy" decoding="async" />
+          <figcaption class="mt-1.5 text-xs text-slate-500">Physician consultation</figcaption>
         </figure>
         <figure class="m-0">
-          <img class="aspect-video w-full rounded-lg border border-slate-200 bg-slate-100 object-cover object-center" src="https://images.pexels.com/photos/4386783/pexels-photo-4386783.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Emergency medical team" width="400" height="250" loading="lazy" decoding="async" />
-          <figcaption class="mt-1.5 text-xs text-slate-500">Emergency care — photo by Karolina Grabowska on Pexels.</figcaption>
+          <img class="aspect-video w-full rounded-lg border border-slate-200 bg-slate-100 object-cover object-center" :src="MEDIA.clinicalTeamAlt" alt="Two clinicians reviewing results together" width="400" height="250" loading="lazy" decoding="async" />
+          <figcaption class="mt-1.5 text-xs text-slate-500">Emergency care</figcaption>
         </figure>
       </div>
     </div>
@@ -91,10 +91,11 @@
 </template>
 
 <script setup lang="ts">
+import { MEDIA } from '~/data/media'
 useHead({ title: 'Laboratory & Diagnostics | MedCore Hospital' })
 
 const labServices = [
-  { name: 'Blood tests', description: 'Complete blood count, metabolic panels, lipid profiles, and specialized markers.', icon: 'i-lucide-test-tube' },
+  { name: 'Blood tests', description: 'Complete blood count, metabolic panels, lipid profiles, and specialised markers.', icon: 'i-lucide-test-tube' },
   { name: 'Imaging', description: 'X-rays, ultrasounds, CT scans, and MRI with digital reporting.', icon: 'i-lucide-scan' },
   { name: 'Pathology', description: 'Biopsy analysis, cytology, and histopathology with expert interpretation.', icon: 'i-lucide-microscope' },
   { name: 'Cardiac markers', description: 'Troponin, BNP, and other cardiac biomarkers for heart condition monitoring.', icon: 'i-lucide-heart-pulse' },

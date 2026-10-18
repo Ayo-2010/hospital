@@ -59,7 +59,7 @@
           </li>
           <li class="flex items-center gap-2">
             <Icon name="i-lucide-credit-card" class="h-4.5 w-4.5 text-medical-700" aria-hidden="true" />
-            Most insurance accepted
+            Most HMOs accepted
           </li>
         </ul>
       </div>
@@ -67,7 +67,7 @@
       <div class="relative animate-fade-in animate-scale-in lg:justify-self-end">
         <figure class="m-0 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-card">
           <img
-            src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&w=1100&q=80&fit=crop"
+            :src="MEDIA.consultation"
             alt="A clinician speaking with a patient in a bright consultation room."
             class="h-[280px] w-full object-cover sm:h-[420px]"
             width="1100"
@@ -93,12 +93,13 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { MEDIA } from '~/data/media'
 
 const props = withDefaults(defineProps<{ basePath?: string }>(), { basePath: '' })
 
 const basePath = computed(() => props.basePath)
 const search = ref('')
-const specialties = ['Cardiology', 'Pediatrics', 'Orthopedics', 'Neurology']
+const specialties = ['Cardiology', 'Paediatrics', 'Orthopaedics', 'Neurology']
 
 function searchDoctors() {
   return navigateTo({

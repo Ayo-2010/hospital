@@ -7,7 +7,7 @@ import HomePage from '~/components/public/HomePage.vue'
 
 definePageMeta({ layout: 'public' })
 useHead({
-  title: 'MedCore Hospital — Compassionate Care, Advanced Medicine',
+  title: 'MedCore Hospital | Compassionate care in Lagos',
   meta: [
     {
       name: 'description',

@@ -16,7 +16,7 @@
         </p>
         <dl class="mt-8 grid grid-cols-3 gap-4 text-center">
           <div>
-            <dt class="text-xs text-medical-200">ER access</dt>
+            <dt class="text-xs text-medical-200">Emergency access</dt>
             <dd class="mt-1 font-display text-2xl font-semibold">24/7</dd>
           </div>
           <div>

@@ -52,7 +52,7 @@
                 <div class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-medical-100 text-medical-700">
                   <span class="text-xs font-semibold">3</span>
                 </div>
-                <p>Recovery in our dedicated post-anesthesia care unit (PACU).</p>
+                <p>Recovery in our dedicated post-anaesthesia care unit.</p>
               </li>
               <li class="flex items-start gap-3">
                 <div class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-medical-100 text-medical-700">
@@ -80,12 +80,12 @@
           <div class="flex items-start gap-3 rounded-md border border-emergency-200 bg-emergency-50 px-4 py-3.5">
             <Icon name="i-lucide-circle-alert" class="mt-0.5 h-5 w-5 text-emergency-700" />
             <p class="text-sm leading-5 text-emergency-900">
-              <strong class="font-semibold">After-hours emergencies?</strong> Call 112 or go to the ER.
+              <strong class="font-semibold">After-hours emergencies?</strong> Call 112 or go to the emergency department.
             </p>
           </div>
           <div class="rounded-lg border border-slate-200 bg-white p-5">
             <h2 class="font-display text-lg font-semibold text-slate-950">Contact surgical scheduling</h2>
-            <p class="mt-2 text-sm text-slate-600">Monday–Friday, 7:00 AM – 6:00 PM</p>
+            <p class="mt-2 text-sm text-slate-600">Monday–Friday, 7am – 6pm</p>
             <p class="mt-1 text-xs text-slate-500">Demonstration contact details.</p>
           </div>
         </aside>
@@ -99,7 +99,7 @@ useHead({ title: 'Surgical Services | MedCore Hospital' })
 
 const specialties = [
   { id: 'general', name: 'General Surgery', description: 'Treatment of conditions affecting the abdomen, breast, skin, and soft tissues.', icon: 'i-lucide-scissors' },
-  { id: 'orthopedic', name: 'Orthopedic Surgery', description: 'Joint replacement, spine surgery, sports medicine, and fracture repair.', icon: 'i-lucide-bone' },
+  { id: 'orthopedic', name: 'Orthopaedic Surgery', description: 'Joint replacement, spine surgery, sports medicine, and fracture repair.', icon: 'i-lucide-bone' },
   { id: 'cardiothoracic', name: 'Cardiothoracic Surgery', description: 'Heart and lung surgery for complex cardiovascular conditions.', icon: 'i-lucide-heart-pulse' },
   { id: 'neurosurgery', name: 'Neurosurgery', description: 'Surgical treatment of brain, spine, and nervous system disorders.', icon: 'i-lucide-brain' },
   { id: 'plastic', name: 'Plastic Surgery', description: 'Reconstructive and aesthetic surgery with advanced techniques.', icon: 'i-lucide-cake-slice' },

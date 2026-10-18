@@ -67,7 +67,7 @@
                 </NuxtLink>
               </template>
               <p v-else class="px-3 py-8 text-center text-sm text-slate-500">
-                No matches. Try “cardiology”, “pediatrics” or a doctor’s name.
+                No matches. Try “cardiology”, “paediatrics” or a doctor’s name.
               </p>
             </template>
 

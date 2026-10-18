@@ -53,7 +53,7 @@ const missionItems: { title: string; description: string; icon: string; color: A
   },
   {
     title: 'Our Vision',
-    description: 'To be the leading healthcare provider known for excellence, innovation, and patient-centered care, setting the standard for clinical quality and compassionate service.',
+    description: 'To be the leading healthcare provider known for excellence, innovation, and patient-centred care, setting the standard for clinical quality and compassionate service.',
     icon: 'i-lucide-eye',
     color: 'healing',
   },

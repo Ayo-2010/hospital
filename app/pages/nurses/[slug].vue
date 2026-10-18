@@ -80,75 +80,20 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { findNurse } from '~/data/clinicians'
 
 const route = useRoute()
-const nurseId = route.params.id as string
+const slug = route.params.slug as string
 
-const nurses: Record<string, any> = {
-  'patricia-chen': {
-    id: '1',
-    slug: 'patricia-chen',
-    name: 'Patricia Chen',
-    title: 'Chief Nursing Officer',
-    specialty: 'Nursing Administration',
-    image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80',
-    experience: '20+ years',
-    bio: 'Advocate for nursing excellence and patient-centered care models. Magnet Recognition Program leader with two decades of clinical and administrative experience.',
-  },
-  'sarah-mitchell': {
-    id: '2',
-    slug: 'sarah-mitchell',
-    name: 'Sarah Mitchell',
-    title: 'RN, ICU',
-    specialty: 'Critical Care',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80',
-    experience: '12 years',
-    bio: 'Critical care nurse specializing in intensive care unit management and post-operative recovery care.',
-  },
-  'michael-rodriguez': {
-    id: '3',
-    slug: 'michael-rodriguez',
-    name: 'Michael Rodriguez',
-    title: 'RN, ER',
-    specialty: 'Emergency Nursing',
-    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80',
-    experience: '9 years',
-    bio: 'Emergency department nurse with expertise in trauma care, rapid response, and emergency triage.',
-  },
-  'emily-watson': {
-    id: '4',
-    slug: 'emily-watson',
-    name: 'Emily Watson',
-    title: 'RN, L&D',
-    specialty: 'Labor & Delivery',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
-    experience: '8 years',
-    bio: 'Labor and delivery nurse supporting mothers and newborns through birth and postpartum care.',
-  },
-  'james-thompson': {
-    id: '5',
-    slug: 'james-thompson',
-    name: 'James Thompson',
-    title: 'RN, OR',
-    specialty: 'Perioperative Nursing',
-    image: 'https://images.unsplash.com/photo-1506165006114-8142f0767898?w=400&q=80',
-    experience: '14 years',
-    bio: 'Perioperative nurse assisting in surgical procedures across general, orthopedic, and cardiac surgery.',
-  },
-  'rachel-green': {
-    id: '6',
-    slug: 'rachel-green',
-    name: 'Rachel Green',
-    title: 'RN, Peds',
-    specialty: 'Pediatric Nursing',
-    image: 'https://images.unsplash.com/photo-1490313520214-7c88698bd250?w=400&q=80',
-    experience: '11 years',
-    bio: 'Pediatric nurse dedicated to child health, family-centered care, and adolescent medicine.',
-  },
+const nurse = findNurse(slug)
+
+if (!nurse) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Nurse not found',
+    fatal: true,
+  })
 }
 
-const nurse = computed(() => nurses[nurseId] || nurses['patricia-chen'])
-
-useHead({ title: `${nurse.value.name} | MedCore Hospital` })
+useHead({ title: () => `${nurse.name} | Nursing Team | MedCore Hospital` })
 </script>

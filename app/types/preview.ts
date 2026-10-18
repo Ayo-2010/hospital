@@ -17,9 +17,16 @@ export interface DemoClinician {
   slug: string
   name: string
   specialty: string
+  /** Primary practice location (campus or specialist centre). */
   location: string
   languages: string[]
   experienceYears: number
+  /** Portrait used on profile cards and the detail page. */
+  image: string
+  /** Public-facing role, e.g. "Consultant Cardiologist". */
+  title?: string
+  /** Short biography shown on the profile page. */
+  bio?: string
 }
 
 export interface DemoDepartment {

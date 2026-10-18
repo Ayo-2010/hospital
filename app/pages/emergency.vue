@@ -47,7 +47,7 @@
                 </div>
                 <div>
                   <h3 class="font-semibold text-slate-900">Care</h3>
-                  <p class="text-sm">Board-certified emergency physicians and nurses provide immediate treatment.</p>
+                  <p class="text-sm">Experienced emergency doctors and nurses provide immediate treatment.</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
@@ -56,7 +56,7 @@
                 </div>
                 <div>
                   <h3 class="font-semibold text-slate-900">Follow-up</h3>
-                  <p class="text-sm">We arrange follow-up care with your primary care physician when appropriate.</p>
+                  <p class="text-sm">We arrange follow-up care with your family doctor when appropriate.</p>
                 </div>
               </li>
             </ul>
@@ -93,7 +93,7 @@
           </section>
 
           <section class="rounded-lg border border-medical-200 bg-medical-50 p-6">
-            <h2 class="font-display text-xl font-semibold text-medical-950">ER visiting hours</h2>
+            <h2 class="font-display text-xl font-semibold text-medical-950">Emergency department visiting hours</h2>
             <p class="mt-2 text-sm text-medical-800">Open 24 hours a day, 7 days a week — no appointments needed.</p>
             <p class="mt-1 text-xs text-slate-500">Demonstration information.</p>
           </section>
@@ -119,7 +119,7 @@
           <div class="flex items-start gap-3 rounded-md border border-emergency-200 bg-emergency-50 px-4 py-3.5">
             <Icon name="i-lucide-phone" class="mt-0.5 h-5 w-5 text-emergency-700" />
             <p class="text-sm leading-5 text-emergency-900">
-              <strong class="font-semibold">ER: </strong>0704 503 3528
+              <strong class="font-semibold">Emergency department: </strong>0704 503 3528
             </p>
           </div>
         </aside>
