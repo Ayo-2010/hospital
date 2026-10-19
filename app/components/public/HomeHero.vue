@@ -3,7 +3,7 @@
     class="relative overflow-hidden border-b border-slate-200"
     style="background-image: radial-gradient(120% 120% at 100% 0%, #f0f9ff 0%, #ffffff 45%)"
   >
-    <div class="container-main grid items-center gap-10 py-12 lg:grid-cols-2 lg:items-stretch lg:gap-16 lg:py-20">
+    <div class="container-main grid items-center gap-10 py-12 lg:grid-cols-2 lg:gap-16 lg:py-20">
       <div class="animate-fade-in animate-slide-up">
         <p class="eyebrow">MedCore Hospital · Lagos</p>
         <h1 class="mt-3 text-4xl font-semibold leading-[1.08] tracking-tight text-slate-950 sm:text-5xl lg:text-[3.4rem]">
@@ -65,13 +65,13 @@
       </div>
 
       <div class="relative w-full animate-fade-in animate-scale-in">
-        <figure class="m-0 h-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-card">
+        <figure class="m-0 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-card">
           <img
             :src="MEDIA.heroConsultation"
-            alt="A clinician speaking with a patient in a bright treatment room."
-            class="h-[360px] w-full object-cover object-center sm:h-[520px] lg:h-full lg:min-h-[600px]"
-            width="900"
-            height="1100"
+            alt="A clinician speaking with a patient in a bright consultation room."
+            class="h-[280px] w-full object-cover object-center sm:h-[420px]"
+            width="1100"
+            height="717"
             loading="eager"
             decoding="async"
           >

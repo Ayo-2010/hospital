@@ -8,7 +8,7 @@
  * it prevents the "right slot, wrong photo" drift the site previously had.
  *
  * Photographs are served from the Pexels CDN, except a few hero images from
- * Unsplash where a taller portrait composition is needed (see `unsplash`).
+ * Unsplash where a particular composition is wanted (see `unsplash`).
  */
 
 /** Build a Pexels CDN URL for a photo id. */
@@ -23,17 +23,16 @@ export function portrait(id: number): string {
 }
 
 /**
- * Build an Unsplash CDN URL, cropped to a portrait frame that keeps faces in
- * shot. Used for a handful of hero images where a taller, more generous
- * composition is needed than the landscape source allows.
+ * Build an Unsplash CDN URL. Unsplash supplies a few hero photographs where a
+ * particular composition is wanted; everything else comes from Pexels.
  */
-function unsplash(id: string, width: number, height: number): string {
-  return `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&crop=faces&w=${width}&h=${height}&q=80`
+function unsplash(id: string, width = 1100): string {
+  return `https://images.unsplash.com/photo-${id}?auto=format&w=${width}&q=80&fit=crop`
 }
 
 export const MEDIA = {
-  /** Smiling clinician talking with a patient in a treatment room. */
-  heroConsultation: unsplash('1631217868264-e5b90bb7e133', 900, 1100),
+  /** Smiling clinician talking with a patient in a bright consultation room. */
+  heroConsultation: unsplash('1631217868264-e5b90bb7e133'),
   /** "EMERGENCY" sign mounted on a hospital building. */
   emergencyEntrance: pexels(263402),
   /** Paramedics moving a patient on a stretcher beside an ambulance. */
