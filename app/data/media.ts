@@ -6,6 +6,9 @@
  * instead of pasting a URL. Keeping the URLs in a single module means a future
  * change of provider (or moving to self-hosted assets) is a one-file edit, and
  * it prevents the "right slot, wrong photo" drift the site previously had.
+ *
+ * Photographs are served from the Pexels CDN, except a few hero images from
+ * Unsplash where a taller portrait composition is needed (see `unsplash`).
  */
 
 /** Build a Pexels CDN URL for a photo id. */
@@ -19,7 +22,18 @@ export function portrait(id: number): string {
   return pexels(id, 480, 600)
 }
 
+/**
+ * Build an Unsplash CDN URL, cropped to a portrait frame that keeps faces in
+ * shot. Used for a handful of hero images where a taller, more generous
+ * composition is needed than the landscape source allows.
+ */
+function unsplash(id: string, width: number, height: number): string {
+  return `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&crop=faces&w=${width}&h=${height}&q=80`
+}
+
 export const MEDIA = {
+  /** Smiling clinician talking with a patient in a treatment room. */
+  heroConsultation: unsplash('1631217868264-e5b90bb7e133', 900, 1100),
   /** "EMERGENCY" sign mounted on a hospital building. */
   emergencyEntrance: pexels(263402),
   /** Paramedics moving a patient on a stretcher beside an ambulance. */

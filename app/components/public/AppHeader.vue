@@ -24,7 +24,7 @@
         </span>
       </NuxtLink>
 
-      <div class="hidden items-center gap-0.5 lg:flex">
+      <div class="hidden items-center gap-0.5 xl:flex">
         <NuxtLink
           v-for="item in navItems"
           :key="item.to"
@@ -64,7 +64,7 @@
 
         <button
           type="button"
-          class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700 transition-colors hover:bg-slate-50 lg:hidden"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700 transition-colors hover:bg-slate-50 xl:hidden"
           :aria-expanded="mobileMenuOpen"
           :aria-controls="menuId"
           :aria-label="mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'"
@@ -83,7 +83,7 @@
       leave-from-class="opacity-100 translate-y-0"
       leave-to-class="opacity-0 -translate-y-1"
     >
-      <div v-if="mobileMenuOpen" :id="menuId" class="border-t border-slate-200 bg-white lg:hidden">
+      <div v-if="mobileMenuOpen" :id="menuId" class="border-t border-slate-200 bg-white xl:hidden">
         <nav class="container-main space-y-1 py-3" aria-label="Mobile">
           <NuxtLink
             v-for="item in navItems"
